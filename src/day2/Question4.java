@@ -13,7 +13,6 @@ public class Question4 {
         for (int i = 2; i < n; i++) {
             answer[i] = answer[i - 2] + answer[i - 1];
         }
-
         return answer;
 
         // 손코딩
