@@ -27,7 +27,7 @@ public class Question1 {
         int n = kb.nextInt();
         int[] arr = new int[n];
 
-        // 큰 수 출력
+        // 큰 수 출력 ( n개의 정수를 입력받어, 자신의 숫자보다 큰 숫자만 출력 ( 맨앞의 숫자는 무조건 출력 ))
         // 6
         // 7 3 9 5 6 12
 

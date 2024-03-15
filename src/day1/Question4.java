@@ -12,8 +12,7 @@ public class Question4 {
         ArrayList<String> answer = new ArrayList<>();
         // 전체 Reverse
         for (String x : str) {
-            String tmp = new StringBuilder(x).reverse().toString();
-            answer.add(tmp);
+            answer.add(new StringBuilder(x).reverse().toString());
         }
 
         // 끝과 끝 Reverse // 특정문자만 바꿔야할 경우에는 1개씩 바꿔야하기에... 이런 방식도 있다고 함.

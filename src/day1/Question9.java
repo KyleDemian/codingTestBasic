@@ -12,11 +12,16 @@ public class Question9 {
             if (x >= 48 && x <= 57) {       // char x 48 ~ 57 Number -> 0 ~ 9
                 answer = answer * 10 + (x - 48);
             }
-
-//            if (Character.isDigit(x)) {
-//                answer += x;
-//            }
         }
+
+        // StringBuilder sb = new StringBuilder();
+        //
+        // for (char c : str.toCharArray()) {
+        //     if (Character.isDigit(c)) {
+        //         sb.append(c);
+        //     }
+        // }
+        // return sb.toString();
 
         return answer;
     }
