@@ -20,7 +20,7 @@ public class Question2 {
             int[] counts = new int[26]; // 각 문자의 빈도수 카운터
 
             for (char c : str.toCharArray()) {
-                counts[c - 'a']++;
+                counts[c - 'a']++;  // 아스키코드값 숫자빼서 해당 문자의 숫자값으로 쪼갬
             }
 
             int max = Arrays.stream(counts).max().orElse(-1); // 최대 빈도수 찾기
