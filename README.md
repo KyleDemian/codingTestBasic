@@ -24,10 +24,10 @@
 
 ## Q3. 자바 문자열 함수
 #java 
-# String a = "Hello World"; 
-# String b = "hello World"; 
-# String c = "aaa,bbb,ddd";
-# char target = 'e';
+#String a = "Hello World"; 
+#String b = "hello World"; 
+#String c = "aaa,bbb,ddd";
+#char target = 'e';
 
 1. **문자열 인덱싱 / 슬라이싱**
     - 인덱싱 -> `a.charAt(7)` -> 'W'
