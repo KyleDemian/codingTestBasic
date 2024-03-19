@@ -169,24 +169,18 @@
     }
 ```
 14. 나머지 몫 구하기
-    ```java
-       int quotient = number / divisor;  // 몫 구하기
-       int remainder = number % divisor; // 나머지 구하기
-    ```
+```java
+   int quotient = number / divisor;  // 몫 구하기
+   int remainder = number % divisor; // 나머지 구하기
+```
 15. 순열, 조합
 ?????
 
 16. 2진수, 8진수, 16진수 변환
 ```java
- // Convert the number to binary, octal, and hexadecimal
-String binary = Integer.toBinaryString(num);
-String octal = Integer.toOctalString(num);
-String hexadecimal = Integer.toHexString(num);
-
-        System.out.println("10진수 숫자 " + num + "(이)라면:");
-        System.out.println("2진수는: " + binary);
-        System.out.println("8진수는: " + octal);
-        System.out.println("16진수는: " + hexadecimal);
+String binary = Integer.toBinaryString(num);    // 2 진수
+String octal = Integer.toOctalString(num);      // 8 진수
+String hexadecimal = Integer.toHexString(num);  // 16 진수
 ```
 17. 소인수 분해
 ```java
