@@ -106,3 +106,110 @@
     - 숫자 -> char num = 48 ~ 59 (0 ~ 9)
     - 소문자 -> char alphaLower = 97 ~ 122 (a to z)
     - 대문자 -> char alphaUpper = 65 ~ 90 (A to Z)
+
+---
+11. **제곱(근) 연산시**
+    - Math.pow(n,m) n 을 m 번을 제곱한 값을 반환
+    - Math.sqrt(n) n의 제곱근을 반환 함.
+
+12. 최대 공약수(GCD) / 최소 공배수(LCM) 구하는 
+    ```java
+    static int gcd(int a, int b) {
+        if (b==0)
+            return a;
+        return gcd(b, a%b);
+    }
+
+    static int lcm(int a, int b){
+        return (a*b)/gcd(a,b);
+    }
+
+    public static void main(String[] args) {
+        int a = 15, b = 20;
+        System.out.println("GCD of " + a +" and " + b + " is " + gcd(a, b));
+        System.out.println("LCM of " + a +" and " + b + " is " + lcm(a, b));
+    }
+    ```
+    
+13. 소수 판별법 ( 에라토스테네스의 체와 제곱근을 이용한 소수 판별법)
+```java
+    // 애라토스테네스의 체
+    public static void main(String[] args) {
+        int maxNum = 100;
+        boolean[] isComposite = new boolean[maxNum + 1];
+    
+        for (int i = 2; i*i < maxNum; i++) {
+            if (!isComposite[i]) {
+                for (int j = i; i*j <= maxNum; j++) {
+                    isComposite[i*j] = true;
+                }
+            }
+        }
+    
+        for (int i = 2; i <= maxNum ; i++ ) {
+            if (!isComposite[i]) {
+                System.out.println (i);
+            }
+        }
+    }
+
+    // 제곱근 
+    static boolean isPrime(int num) {
+        if(num <= 1) return false;
+        if(num == 2) return true;
+        if(num % 2 == 0) return false;
+
+        int sqrt = (int)Math.sqrt(num);
+        for(int i = 3; i <= sqrt; i+=2) {
+            if(num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+```
+14. 나머지 몫 구하기
+    ```java
+       int quotient = number / divisor;  // 몫 구하기
+       int remainder = number % divisor; // 나머지 구하기
+    ```
+15. 순열, 조합
+?????
+
+16. 2진수, 8진수, 16진수 변환
+```java
+ // Convert the number to binary, octal, and hexadecimal
+String binary = Integer.toBinaryString(num);
+String octal = Integer.toOctalString(num);
+String hexadecimal = Integer.toHexString(num);
+
+        System.out.println("10진수 숫자 " + num + "(이)라면:");
+        System.out.println("2진수는: " + binary);
+        System.out.println("8진수는: " + octal);
+        System.out.println("16진수는: " + hexadecimal);
+```
+17. 소인수 분해
+```java
+public static void primeFactors(int number) {
+        // Print the number of 2s that divide number
+        while (number % 2 == 0) {
+            System.out.print(2 + " ");
+            number /= 2;
+        }
+
+        // n must be odd at this point, thus skip the even numbers and iterate only for odd
+        for (int i = 3; i <= Math.sqrt(number); i += 2) {
+            // While i divides n, print i and divide n
+            while (number % i == 0) {
+                System.out.print(i + " ");
+                number /= i;
+            }
+        }
+
+        // This condition is to handle the case when number is a prime number greater than 2
+        if (number > 2)
+            System.out.print(number);
+    }
+```
+
+
