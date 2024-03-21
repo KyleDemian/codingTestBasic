@@ -8,11 +8,11 @@ public class Question11 {   // 오답이라는데.. 뭐가 틀린지 못찾겠�
 
     public int solution(int n, int[][] arr) {
         int answer = 0, max = Integer.MIN_VALUE;
-        for (int i = 1; i <= n; i++) {   // 학생번호
+        for (int i = 1; i <= n; i++) {   // 학생
             int cnt = 0;
-            for (int j = 1; j <= n; j++) { // 학년
-                for (int k = 1; k <= 5; k++) {
-                    if (arr[i][k] == arr[j][k]) {
+            for (int j = 1; j <= n; j++) { // 학생
+                for (int k = 1; k <= 5; k++) {  // 학년
+                    if (arr[i][k] == arr[j][k]) { // i j 학생을 비교
                         cnt++;
                         break;
                     }

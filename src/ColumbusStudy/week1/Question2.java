@@ -26,6 +26,8 @@ public class Question2 {
                 counts[c - 'a']++;
             }
 
+            // 오버플로우 - Integer char short  최대로 표현 할 수 잇는 범위 4byte 32 bit 1 첫 1 비트는 부호를 나타내고, 나머지는 숫자.
+            // Integer.가 최소로 표현할수잇는값,
             int maxIndex = 0;
             int maxCount = 0;
 

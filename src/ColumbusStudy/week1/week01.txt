@@ -2,6 +2,14 @@
 Week1
 Day01
 Q1. https://www.acmicpc.net/submit/11720/75182713
+1. 문제 설명
+> N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출력하는 프로그램을 작성하시오.
+
+2. 접근 방식
+해당 코드는 일단 문제 자체가 간단하고, 특정 문자의 개수를 입력 받고, 그 입력받은 문자를 모두 합해서 출력하는 프로그램이다.
+그렇기 때문에 가장 간단하게 생각해서 특정 문자를 1개씩 나눠서 받음 다음, 해당 값을 char의 값으로 가지고 나서
+문자 값을 숫자값으로 변환하면 되겠다 생각이 들었다.
+
 문제의 경우는 어려운 부분은 없이 해결 가능했다.
 다만 생각하지 못한 부분이 char - 값을 sum 을 해주기 위해서
 value.charAt(i)-'0'; -> '0' 부분을 추가적으로 붙였다는 것이다.
@@ -50,3 +58,9 @@ Pattern.matches(pa, 비교할대상) 등올 작성하여 문제를 해결하였�
 ? : 직전의 문자가 없거나 한 번 나타나는 것을 의미
 
 정규식도 파악해두어야 일반적으로 문제 해결이 가능할 것으로 보인다.
+
+// JAVA 에서 문자를 숫자 그대로 가져오는 방법
+// Character.getNumericValue(str.charAt(i));
+
+// if(Character.isLowerCase(my_string.charAt(i))){
+answer += Character.toUpperCase(my_string.charAt(i));
