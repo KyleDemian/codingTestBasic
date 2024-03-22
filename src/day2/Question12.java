@@ -37,8 +37,8 @@ public class Question12 {
     public static void main(String[] args) {
         Question12 T = new Question12();
         Scanner kb = new Scanner(System.in);
-        int n = kb.nextInt();
-        int m = kb.nextInt();
+        int n = kb.nextInt();   // 학생 수
+        int m = kb.nextInt();   // 테스트 횟수
         int[][] arr = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
