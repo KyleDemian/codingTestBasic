@@ -4,15 +4,19 @@ import java.util.Scanner;
 
 public class Question7 {
 
+    // https://www.acmicpc.net/problem/1929
     // 에라토스테네스의 체 방식으로 풀어야함..
     // 뭔지는 정확하게 아는데, 배열에다가 담아서 그 배열값에서 미래의 될것들을 다 체크해서 다 삭제 ( 배열 Boolean Or 숫자값으로 )
     // 입력받는값의 이상이면서 이하인값 // m 의 최소값은 그러면 2 이상임
+    // 체 이용해서 풀거나, 제곱근으로 풀거나
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int m = kb.nextInt();
         int n = kb.nextInt();
+        StringBuilder sb = new StringBuilder();
         boolean[] arr = new boolean[n+1];
 
+        // 스트링 빌더  \\n 넣어서 한번에 출력해볼것.
         for (int i = 2; i <= n; i++) {
             if (!arr[i]) {
                 // 배열값에서 배수들 전부 True 변경
@@ -21,13 +25,17 @@ public class Question7 {
                 }
                 // 소수값 출력
                 if (i >= m) {
-                    System.out.println(i);
+                    sb.append(i).append("\n");
                 }
             }
         }
+        System.out.print(sb.toString());
     }
 
     /*  시간 최적화 된 코드 // O(n log log n)
+    // 제곱근의 값은 수학적 사실 -> 숫자 5가 판별을 할때
+    // 다른 수로 나눠지지 않는 수 // 1 * n // n^2
+    // 두수가 곱한 값을 가지고왔을때 // 제곱근까지만 확인 하면 됌.
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int m = kb.nextInt();
