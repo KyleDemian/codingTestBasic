@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Question3 {
 
     // https://cote.inflearn.com/contest/10/problem/06-03
-
+    // 삽입 정렬
+    // 2중 포문 j = i-1 << 핵심 앞의 숫자랑 확인
     public int[] solution(int n, int[] arr) {
         for (int i = 1; i < n; i++) {
             int tmp = arr[i], j;
