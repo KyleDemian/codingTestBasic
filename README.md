@@ -1,10 +1,12 @@
-# 콜롬버스 스터디 1주차
+# 콜롬버스 스터디 1~2 주차
 
 ## 목차
 
 - [Q1. 알고리즘/자료구조](#q1-알고리즘자료구조란)
 - [Q2. 시간복잡도/공간복잡도/빅오 표기법](#q2-시간복잡도공간복잡도빅오-표기법-이란)
 - [Q3. 자바 문자열 함수](#q3-자바-문자열-함수)
+- [Q4. 스택과 큐를 구현하시오.](#q4-스택과-큐를-구현하시오)
+- [Q5. LinkedList를 구현하시오.](#q5-LinkedList를-구현하시오)
 
 ---
 
@@ -205,5 +207,117 @@ public static void primeFactors(int number) {
             System.out.print(number);
     }
 ```
+
+---
+
+## Q4. 스택과 큐를 구현하시오
+
+1. Stack - Fist In Fist Out
+```java
+    import java.util.LinkedList;
+    import java.util.Queue;
+    
+    public static void main(String[] args) {
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(1);
+        q.offer(2);
+        q.offer(3);
+        
+        // 예상 출력 값 1
+        q.poll();
+        
+        // false
+        q.isEmpty();
+        
+        // 2
+        q.size();
+        
+        // false
+        q.contains(4);
+    }
+
+```
+
+2. Queue - Last In First Out
+```java
+    import java.util.*;
+
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        
+        // 3
+        stack.pop();
+        
+        // false
+        stack.isEmpty();
+        
+        // 2
+        stack.size();
+        
+        // true
+        stack.contains(2);
+        
+        // 1
+        stack.get(0);
+    }
+```
+
+---
+
+---
+
+## Q5. LinkedList를 구현하시오
+
+```java
+    public class Node {
+        int data;
+        Node next;
+    
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+    
+    public class LinkedList {
+        Node head;
+    
+        public void add(int data) {
+            Node newNode = new Node(data);
+            if (head == null) {
+                head = newNode;
+            } else {
+                Node last = head;
+                while (last.next != null) {
+                    last = last.next;
+                }
+                last.next = newNode;
+            }
+        }
+    
+        public void print() {
+            Node current = head;
+            while (current != null) {
+                System.out.print(current.data + " ");
+                current = current.next;
+            }
+            System.out.println();
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            LinkedList list = new LinkedList();
+            list.add(1);
+            list.add(2);
+            list.add(3);
+            list.print();  // 출력: 1 2 3
+        }
+    }
+```
+---
 
 
