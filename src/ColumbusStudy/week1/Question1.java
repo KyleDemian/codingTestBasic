@@ -12,6 +12,7 @@ public class Question1 {
     public static void main(String[] args) {
         Scanner kb =  new Scanner(System.in);
         int cnt = kb.nextInt();
+        kb.nextLine();
         String value = kb.next();
         int sum = 0;
         for (int i = 0; i < cnt; i++) {

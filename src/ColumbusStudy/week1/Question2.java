@@ -22,6 +22,7 @@ public class Question2 {
 
             int[] counts = new int[26]; // 각 문자의 빈도수 카운터
 
+            // 소문자 counts 방을 만듦 ( 숫자로 들어감 )
             for (char c : str.toCharArray()) {
                 counts[c - 'a']++;
             }
@@ -31,7 +32,7 @@ public class Question2 {
             int maxIndex = 0;
             int maxCount = 0;
 
-            // 최대 빈도수 및 해당 문자의 인덱스 찾기
+            // 최대 빈도수 및 해당 문자의 인덱스 찾기 // 총 26번 돌아감
             for (int i = 0; i < counts.length; i++) {
                 if (counts[i] > counts[maxIndex]) {
                     maxIndex = i;
