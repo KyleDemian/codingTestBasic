@@ -24,7 +24,7 @@ public class Question3 {
         for (char x : str.toCharArray()) {
             if (Character.isAlphabetic(x)) {
                 int index = x - 'A';
-                stack.push(arr[index]); // 0 1 2 3 4 5 순서대로
+                stack.push(arr[index]); // 1 2 3 4 5 순서대로
             } else {
                 double rt = stack.pop();
                 double lt = stack.pop();

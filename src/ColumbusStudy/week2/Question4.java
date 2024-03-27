@@ -13,12 +13,12 @@ public class Question4 {
         int[] arr = new int[n];
         int start = 0;
 
-        // 만들 배열값
+        // 미리 만든 배열값
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        // 총 돌아야 하는 배열 값
+        // 총 돌아야 하는 배열 값 + 해당 배열을 푸쉬 할지 팝을 할지 정하는 부분
         for (int i = 0; i < n; i++) {
             if(arr[i] > start) {
                 // 1회 기준 첫 입력값이 4니까 0 부터 3까지 ( 총 4회 )
@@ -29,6 +29,7 @@ public class Question4 {
                 start = arr[i];
             }
 
+            // 1회때는 stack.size() 4 가 될것이고, 그리고 peek 값과 arr[i] 값이 4가 됌.
             if(!stack.isEmpty() && stack.peek() == arr[i]) {
                 stack.pop();
                 sb.append("-\n");
