@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class Question1 {
+    // https://www.acmicpc.net/problem/18258
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();

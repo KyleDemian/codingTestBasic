@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class Question3 {
+
+    // https://www.acmicpc.net/problem/1935
     // 후위 표기식
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
@@ -20,6 +22,9 @@ public class Question3 {
             arr[i] = kb.nextInt();
         }
 
+
+        // 파이프 라인 스위치 명령어 사용시 속도 향상이 가능함
+        // >> 컴파일러에따라서 다르다고 함, 확인해볼것-_-b
         double answer = 0;
         for (char x : str.toCharArray()) {
             if (Character.isAlphabetic(x)) {

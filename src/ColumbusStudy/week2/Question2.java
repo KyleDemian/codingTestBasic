@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class Question2 {
+
+    // https://www.acmicpc.net/problem/9012
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
