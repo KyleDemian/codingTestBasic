@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class Question5 {
-    // https://www.acmicpc.net/problem/18258
+    // https://www.acmicpc.net/problem/5397
     // 참고 https://upcurvewave.tistory.com/633
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
