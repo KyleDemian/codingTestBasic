@@ -8,20 +8,19 @@ import java.util.*;
 public class Question7 {
     // https://www.acmicpc.net/problem/1158
     // 요세푸스 문제
+    // 둥글게 앉아있다고 생각하고, K 번째마다 빼버리면 됌
     public static void main(String[] args) throws IOException {
         Scanner kb = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
-
-        int n = kb.nextInt();
-        int k = kb.nextInt();
-
         Queue<Integer> q = new LinkedList<>();
 
+        int n = kb.nextInt();
         // 1 to 7
         for (int i = 1; i <= n; i++) {
             q.offer(i);
         }
 
+        int k = kb.nextInt();
         sb.append("<");
         // K 번째까지 그럼 ...?
         while (q.size() > 1) {

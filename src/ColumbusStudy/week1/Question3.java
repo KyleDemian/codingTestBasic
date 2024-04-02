@@ -11,6 +11,8 @@ public class Question3 {
         int max = 0;
         char result = '?';
 
+        // 초기 배열값은 0 인데, 해당 값이 노출될때마다 해당 위치의 숫자 값을 +1 +1 +1 한다는의미임
+
         for (char x :  str.toCharArray()){
             cnt[x-'A']++;
             if(max < cnt[x - 'A']){
@@ -21,7 +23,5 @@ public class Question3 {
             }
         }
         System.out.println(result);
-
-        
     }
 }

@@ -6,7 +6,7 @@ public class Question8 {
 
     // https://www.acmicpc.net/problem/6443
     // 아나그램
-    // 틀렸다는데 뭐가 틀린거지..
+    // 틀렸다는데 뭐가 틀린거지.. ? 문제 틀림.. ㅠㅠ
 
     public static char[] arr;
 

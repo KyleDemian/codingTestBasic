@@ -14,10 +14,11 @@ public class Question3 {
         double[] arr = new double[n];
 
         // 문제 형태
+        // A B C D E F 는 어차피 대문로 해당 하는 값을 때면 해당 숫자랑 매칭됌
         String str = kb.nextLine();
         Stack<Double> stack = new Stack<>();
 
-        // 값 들어오는 순서
+        // 값 들어오는 순서 1 2 3 4 5
         for (int i = 0; i < n; i++) {
             arr[i] = kb.nextInt();
         }

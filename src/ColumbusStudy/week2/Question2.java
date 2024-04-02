@@ -15,9 +15,8 @@ public class Question2 {
             arr[i] = kb.nextLine();
         }
 
-        Stack<Character> stack = new Stack<>();
-
         for (int i = 0; i < arr.length; i++) {
+            Stack<Character> stack = new Stack<>();
             boolean isValid = true;
             for (char x : arr[i].toCharArray()) {
                 if(x == '('){

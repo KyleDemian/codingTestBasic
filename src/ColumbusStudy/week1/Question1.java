@@ -18,6 +18,9 @@ public class Question1 {
         for (int i = 0; i < cnt; i++) {
             sum += value.charAt(i)-'0';
         }
+        // for(char x : str.toCharArray()){
+        //      sum += x -'0';
+        // }
         System.out.println(sum);
     }
 }

@@ -7,6 +7,9 @@
 - [Q3. 자바 문자열 함수](#q3-자바-문자열-함수)
 - [Q4. 스택과 큐를 구현하시오.](#q4-스택과-큐를-구현하시오)
 - [Q5. LinkedList를 구현하시오.](#q5-LinkedList를-구현하시오)
+- [Q6. Hash Table](#q6-Hash-Table)
+- [Q7. Deque](#q7-Deque)
+- [Q8. 투포인터](#q8-투포인터)
 
 ---
 
@@ -320,4 +323,89 @@ public static void primeFactors(int number) {
 ```
 ---
 
+## Q6. Hash Table
+- 해쉬 테이블은 키-값 으로 이루어지는 자료 구조이며, 순서가 없음.
+만약 해당 해쉬 테이블을 정렬하고 싶으면, TreeMap 구조로 변경하여 정렬 할 수 있음.
 
+또한, 해당 해쉬테이블의 경우 시간복잡도가 O(1) 이기때문에 빠른 검색이 가능함.
+또한 Null을 허용 하지 않고, Thread-safe 한 구조라고 할 수 있음
+
+그리고 사이즈도 가변으로 설정 할수 있기 때문에 메모리 효율도 좋다고 함.
+
+## Q7. Deque
+데큐는 큐 구조라고 생각하면 되고, 데큐어레이, 링크드 리스트등으로 구현 할 수 있음.
+그리고 이걸 쓰는 이유는 list 보다 속도가 빠르고, Thread-safe 하기때문에 사용 할 수 있음
+
+그리고 해당 구조는 일반 큐처럼 데이터를 넣고 뺼수 있지만 아래 처럼 사용 가능
+```java
+import java.util.Deque;
+import java.util.LinkedList;
+
+Deque<Integer> deque = new LinkedList<>();
+// 마지막에 추가
+deque.addLast(1);
+deque.offerLast(2); // 위와 같은 작업
+// 처음에 추가
+deque.addFirst(0);
+deque.offerFirst(-1); // 위와 같은 작업
+// 마지막 요소를 제거하고 반환
+int lastElement = deque.removeLast();
+int lastElement = deque.pollLast(); // 위와 같은 작업, 하지만 데크가 비어 있을 경우 null 반환
+// 시작 부분의 요소를 제거하고 반환:
+int firstElement = deque.removeFirst();
+int firstElement = deque.pollFirst(); // 위와 같은 작업, 하지만 데크가 비어 있을 경우 null 반환
+// 마지막 요소를 반환하되 제거하지 않음:
+int lastElement = deque.getLast();
+int lastElement = deque.peekLast(); // 위와 같은 작업, 하지만 데크가 비어 있을 경우 null 반환
+// 시작 부분의 요소를 반환하되 제거하지 않음:
+int firstElement = deque.getFirst();
+int firstElement = deque.peekFirst(); // 위와 같은 작업, 하지만 데크가 비어 있을 경우 null 반환
+// deque 빈요소 반환
+deque.clear();
+```
+등으로 사용 가능함.
+
+물론, add 등으로 요소를 추가할 수 있지만, 정상적으로 들어가지 않았을경우, Exception을 발생 시킴
+
+## Q8. 투포인터 
+- 해당 알고리즘은 리스트(배열) 등에서 해당 위치를 잡고, Start(lt) , End(rt) 조건을 잡고 움직이면서 사용하는 대표적인 알고리즘
+예를 들어서 아나그램코드를 작성할때
+
+abcdeffacbab
+abc
+
+```java
+public int solution(String a, String b) {
+        int answer = 0;
+        HashMap<Character, Integer> am = new HashMap<>();
+        HashMap<Character, Integer> bm = new HashMap<>();
+
+        // 사전 세팅
+        for (char x : b.toCharArray()) {
+            bm.put(x, bm.getOrDefault(x, 0) + 1);
+        }
+        int L = b.length() - 1;
+        for (int i = 0; i < L; i++) {
+            am.put(a.charAt(i), am.getOrDefault(a.charAt(i), 0) + 1);
+        }
+
+        // 투포인트 알고리즘, 슬라이딩 윈도우, 아나그램 알고리즘 equals
+        int lt = 0;
+        for (int rt = L; rt < a.length(); rt++) {
+            am.put(a.charAt(rt), am.getOrDefault(a.charAt(rt), 0) + 1);
+            if (am.equals(bm)) {
+                answer++;
+            }
+            am.put(a.charAt(lt), am.get(a.charAt(lt)) - 1);
+            if (am.get(a.charAt(lt)) == 0) {
+                am.remove(a.charAt(lt));
+            }
+            lt++;
+        }
+
+
+        return answer;
+    }
+```
+
+라고 코드가 작성되어있으면 해당 문제는 입력 받은값에서 abc 만큼 슬라이딩 하면서 잡는 알고리즘임.

@@ -8,6 +8,7 @@ public class Question5 {
     // 참고 https://upcurvewave.tistory.com/633
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         int n = Integer.parseInt(br.readLine());
 
         while (n-- > 0) {
@@ -41,12 +42,10 @@ public class Question5 {
                 right.push(left.pop());
             }
 
-            StringBuilder sb = new StringBuilder();
             while (!right.isEmpty()) {
                 sb.append(right.pop());
             }
-
-            System.out.println(sb.toString());
         }
+        System.out.println(sb.toString());
     }
 }
