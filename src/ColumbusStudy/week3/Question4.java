@@ -26,7 +26,6 @@ public class Question4 {
             sum += stack.pop();
         }
 
-
         System.out.print(sum);
     }
 }

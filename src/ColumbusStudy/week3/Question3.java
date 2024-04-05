@@ -10,6 +10,7 @@ public class Question3 {
     // https://www.acmicpc.net/problem/1021
     // https://infodon.tistory.com/89 참고 사이트
     // https://st-lab.tistory.com/216
+    // https://st-lab.tistory.com/187
 
     static Deque<Integer> dq = new ArrayDeque<>();
     public static void main(String[] args) {
@@ -41,12 +42,8 @@ public class Question3 {
                 }
             }
 
-            int result = 0 ;
             int dqEnd = dq.size() - index;
             int dqStart = index - 1;
-
-            if(dqEnd < dqStart) result = dqEnd;
-            else result = dqStart;
 
             // 덱의 왼쪽 끝에서 a까지의 거리 (index - 1)와 오른쪽 끝에서 a까지의 거리 (dq.size() - index)를 계산합니다.
             // 더 짧은 거리를 선택한 후 요소 a를 큐의 첫 부분으로 이동시키기 위해 해당 방향으로 큐를 회전합니다.
@@ -55,17 +52,17 @@ public class Question3 {
                     dq.pollFirst();
                     break;
                 } else {
-                    if( index - 1 <= dq.size() - index){   // 좌측
-                        for(int j = 0; j < index - 1; j++) {
-                            dq.offerLast(dq.pollFirst()); // left rotation
+                    if( dqStart <= dqEnd){   // 좌측
+                        for(int j = 0; j < dqStart; j++) {
+                            dq.offerLast(dq.pollFirst());
                             answer++;
-                            if (a == dq.peekFirst()) break; // Add this line
+                            if (a == dq.peekFirst()) break;
                         }
                     } else { // 우측
                         for(int j = 0; j < dq.size() - index + 1; j++) {
-                            dq.offerFirst(dq.pollLast()); // right rotation
+                            dq.offerFirst(dq.pollLast());
                             answer++;
-                            if (a == dq.peekFirst()) break; // Add this line
+                            if (a == dq.peekFirst()) break;
                         }
                     }
                 }

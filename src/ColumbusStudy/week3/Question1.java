@@ -21,6 +21,7 @@ public class Question1 {
         // 에라토스테네스의 체 의 시작
         for (int i = 2; i <= n; i++) {
             for(int j = i; j <= n ; j+=i ){
+                // 모든 숫자값을 검사를 해야 하므로 하나씩 다 체크해야함...
                 if (!arr[j]) {
                     arr[j] = true;
                     checked++;
