@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalTime;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class Question10 {
 
@@ -50,13 +52,14 @@ public class Question10 {
                 result++;
             }
         }
+
         System.out.print(result);
     }
 }
 
 
-/*
 
+/*
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String[] temp = reader.readLine().split(" ");
@@ -64,7 +67,7 @@ public class Question10 {
         LocalTime end = LocalTime.parse(temp[1]);
         LocalTime closing = LocalTime.parse(temp[2]);
 
-        HashMap<String, Boolean> hm = new HashMap<>();
+        HashMap<String, Integer> hm = new HashMap<>();
 
         String input;
         while((input = reader.readLine()) != null && !input.equals("")) {
@@ -73,17 +76,16 @@ public class Question10 {
             String user = data[1];
 
             if (chatTime.compareTo(start) <= 0) {
-                hm.put(user, false);
+                hm.put(user, hm.getOrDefault(user, 0)+1);
             }
             if (chatTime.compareTo(end) >= 0 && chatTime.compareTo(closing) <= 0) {
-                hm.replace(user, true);
+                hm.put(user, hm.getOrDefault(user, 0)+1);
             }
         }
 
-        long count = hm.entrySet().stream()
-                 .filter(Map.Entry::getValue)
-                 .count();
+        long result = hm.entrySet().stream().filter(entry -> entry.getValue() >= 2).count();
 
-        System.out.println(count);
+        System.out.println(result);
     }
+
  */

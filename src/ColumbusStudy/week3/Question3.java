@@ -42,8 +42,8 @@ public class Question3 {
                 }
             }
 
-            int dqEnd = dq.size() - index;
-            int dqStart = index - 1;
+            int dqStart = index - 1;        // 왼쪽
+            int dqEnd = dq.size() - index;  // 오른쪽
 
             // 덱의 왼쪽 끝에서 a까지의 거리 (index - 1)와 오른쪽 끝에서 a까지의 거리 (dq.size() - index)를 계산합니다.
             // 더 짧은 거리를 선택한 후 요소 a를 큐의 첫 부분으로 이동시키기 위해 해당 방향으로 큐를 회전합니다.

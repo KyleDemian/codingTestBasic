@@ -36,14 +36,12 @@ public class Question9 {
                 rt--;
             }
         }
-
         System.out.println(result);
     }
 }
 
 
 /*
-
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();   // 재료 수
@@ -61,9 +59,6 @@ public class Question9 {
                 }
             }
         }
-
         System.out.println(result);
     }
-
-
 * */
