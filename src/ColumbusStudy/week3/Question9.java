@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Question9 {
 
     // https://www.acmicpc.net/problem/1940
+    // 완전탐색..!? 확인해볼것
 
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
