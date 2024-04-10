@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Question1 {
+
+    // https://www.acmicpc.net/problem/11047
     public static void main(String[] args) {
 
         Scanner kb = new Scanner(System.in);

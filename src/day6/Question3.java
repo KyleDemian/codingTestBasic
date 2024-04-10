@@ -14,6 +14,7 @@ public class Question3 {
                 if(arr[j]> tmp) arr[j + 1] = arr[j];
                 else break;
             }
+            // 현재 J d의 뒤편에 삽입.
             arr[j+1] = tmp;
         }
 

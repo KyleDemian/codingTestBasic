@@ -18,7 +18,7 @@ public class Question6 {
     }
 
     // 최소공배수 -> 최대공약수를 호출해서 구함.
-    static int findLcm(int n, int m) {
+    static int findLcm(int n, int m)     {
         return (n * m) / findGcd(n, m);
     }
 

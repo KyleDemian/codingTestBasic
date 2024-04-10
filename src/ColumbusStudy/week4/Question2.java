@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Question2 {
 
+    // https://www.acmicpc.net/problem/1758
+    // 배열을 정렬하기 위해서 int 가 아니라, Integer 로 배열을 선언해야함.
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
@@ -24,7 +26,7 @@ public class Question2 {
         for (int i = 0; i < arr.length ; i++) {
             // 금액 = 생각한한 금액 - ( 받은 등수 - 1 ) ( (i+1) -1) -> i 값;
             int tip = arr[i] - i;
-            if( tip >= 0 ) answer += tip;
+            if( tip > 0 ) answer += tip;
         }
 
         System.out.println(answer);
