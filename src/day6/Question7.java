@@ -1,6 +1,5 @@
 package day6;
 
-import java.nio.channels.Pipe;
 import java.util.*;
 
 public class Question7 {
@@ -18,7 +17,7 @@ public class Question7 {
         @Override
         public int compareTo(Point o) {
             if (this.x == o.x) {
-                return this.y-o.y;  // 오름차순
+                return this.y-o.y;  // 오름차순 // this 가 앞에 있으면, 오름차순, 다른 객체가 먼저 있으면 내림차순 // 음수값이 리턴되게하면 음수!
             }else {
                 return this.x-o.x;
             }

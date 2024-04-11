@@ -1,6 +1,5 @@
 package day6;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Scanner;
 

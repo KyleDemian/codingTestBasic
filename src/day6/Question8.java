@@ -7,7 +7,6 @@ public class Question8 {
 
     // https://cote.inflearn.com/contest/10/problem/06-08
     // 알고리즘 배우기 // 이분검색 시작 정렬 -> n/2 로 나누고 그 값 을 찾기.
-
     public int solution(int n,int m, int[] arr) {
         int answer = 0;
         Arrays.sort(arr);
