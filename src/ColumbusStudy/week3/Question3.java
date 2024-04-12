@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Question3 {
 
+    // 중간고사 문제였음.. 아놔.. 어려웠다. 왜 푼기억이랑 이해가 안되나했는데..
     // https://www.acmicpc.net/problem/1021
     // https://infodon.tistory.com/89 참고 사이트
     // https://st-lab.tistory.com/216
@@ -23,6 +24,11 @@ public class Question3 {
         for (int i = 1; i <= n; i++) {
             dq.offer(i);
         }
+
+        // dq.offerFirst(1);
+        // dq.offerLast(1);
+        // dq.pollFirst();
+        // dq.pollLast();
 
         for (int i = 0; i < m; i++) {
             // 입력 값

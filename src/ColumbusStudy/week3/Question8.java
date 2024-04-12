@@ -13,12 +13,13 @@ public class Question8 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        // 가지수..?
+        // n 번 진행 횟수.
         int n = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < n; i++) {
+            // <의상, 타입> 의 개수
             int m = Integer.parseInt(br.readLine());
-            // 같은 의상이 존재 하지 않아야함. < 의상, 숫자 >
+            // 같은 의상이 존재 하지 않아야함. < 타입, 숫자 >
             HashMap<String, Integer> hm = new HashMap<>();
 
             // 옷 상품

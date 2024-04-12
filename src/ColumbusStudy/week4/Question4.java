@@ -29,6 +29,7 @@ public class Question4 {
         }
 
         System.out.print(a);
+        System.out.printf("%.4f", a);
     }
 }
 

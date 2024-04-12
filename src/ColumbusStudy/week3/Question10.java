@@ -12,9 +12,22 @@ public class Question10 {
 
     // https://www.acmicpc.net/problem/19583
 
+    // HH:MM 형식일 경우
+    public static int getTime(String time) {
+        int h = Integer.parseInt(time.split(":")[0]);
+        int m = Integer.parseInt(time.split(":")[0]);
+
+        return (h * 60) + m;
+    }
+
     public static void main (String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] temp = br.readLine().split(" ");
+
+        // 이런방식으로 숫자값을 넣어서 비교해도 됌. 형태가 00:00 ~ 23:59 형태로 들어올경우.
+        int s = getTime(temp[0]);
+        int e = getTime(temp[1]);
+        int c = getTime(temp[2]);
 
         String[] start = temp[0].split(":");
         String[] end = temp[1].split(":");

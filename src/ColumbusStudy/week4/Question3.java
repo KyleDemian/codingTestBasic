@@ -14,10 +14,7 @@ public class Question3 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
 
-        String a = "AAAA";
-        String b = "BB";
-
-        str = str.replace("XXXX", a).replace("XX", b);
+        str = str.replace("XXXX", "AAAA").replace("XX", "BB");
 
         if (str.contains("X")) {
             System.out.print("-1");

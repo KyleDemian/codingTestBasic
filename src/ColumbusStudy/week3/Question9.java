@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Question9 {
 
     // https://www.acmicpc.net/problem/1940
-    // 완전탐색..!? 확인해볼것
+    // 정렬 후 투포인트 알고리즘을 사용한 문제
 
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
@@ -15,7 +15,7 @@ public class Question9 {
         kb.nextLine();
         String[] str = kb.nextLine().split(" ");    // n 재료들이 가진 고유한 번호들
         int[] numbers = new int[str.length];
-        for (int i = 0; i < str.length; i++) {
+        for (int i = 0; i < n; i++) {
             numbers[i] = Integer.parseInt(str[i]);
         }
 

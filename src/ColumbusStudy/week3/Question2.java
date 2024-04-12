@@ -17,7 +17,7 @@ public class Question2 {
         String[] arr = new String[n];
         kb.nextLine();
 
-        // 숫자값만 매칭하는 부분 필요.
+        // 숫자값만 매칭하는 부분 필요. \\d 숫자 + 모든
         Pattern pa = Pattern.compile("\\d+");
 
         // 숫자 값 편하게 정렬하기 위해서 만듦

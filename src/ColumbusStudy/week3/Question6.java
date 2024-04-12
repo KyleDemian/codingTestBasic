@@ -34,7 +34,6 @@ public class Question6 {
             double percent = (value / total) * 100;
 
             // 오류 이유...
-            // String data = String.format("%.f4", percent);
             sb.append(key).append(" ").append(String.format("%.4f", percent)).append("\n");
         }
         System.out.print(sb.toString());
