@@ -4,8 +4,8 @@ import java.util.StringTokenizer;
 
 public class Question10 {
 
-    //https://school.programmers.co.kr/learn/courses/30/lessons/92335
-
+    // https://school.programmers.co.kr/learn/courses/30/lessons/92335
+    // 해당 부분은 다시 이해해볼ㄱ것
     public int solution(int n, int k) {
         StringBuilder sb = new StringBuilder();
 

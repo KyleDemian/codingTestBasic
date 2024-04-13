@@ -20,6 +20,8 @@ public class Question9 {
         new_id = new_id.replaceAll("^[.]|[.]$", "");
 
         // 5단계
+        // Null 일경우 str.equals("") 도 공백처리 이고, 이때는 false 를 반환
+        // isEmpty()의 경우 NPE를 발생시킴.
         if (new_id.isEmpty()) {
             new_id = "a";
         }
@@ -30,7 +32,7 @@ public class Question9 {
             new_id = new_id.replaceAll("^[.]|[.]$", "");
         }
 
-        // 7단계
+        // 7단계 Index 의 경우 0부터 시작하기떄문에 length()-1
         while (new_id.length() < 3){
             new_id += new_id.charAt(new_id.length()-1);
         }
