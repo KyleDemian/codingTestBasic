@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Question6 {
-    //https://www.acmicpc.net/problem/4358
+    // https://www.acmicpc.net/problem/4358
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
