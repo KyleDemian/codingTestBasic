@@ -15,6 +15,9 @@ public class Q22 {
 
         HashMap<String, Double> hm = new HashMap<>();
         double total = 0.0;
+
+        // 해당 부분, 인풋이 없거나, 공백일경우 끝날 수 있도록, 해당 방식처럼
+        // 외워둘것!!
         String input;
         while ((input = br.readLine()) != null && !input.equals("")) {
             total++;
