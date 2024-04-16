@@ -10,16 +10,14 @@ public class Question3 {
         String answer = "";
 
         int m = 0;
-        String[] s = str.split(",");
+        String[] s = str.split(" ");
         for (String x : s) {
-            /** 가장 긴거 뽑기
             int length = x.length();
             if (length > m) {
                 m = length;
                 answer = x;
             }
-            */
-            answer += x + " ";
+//            answer += x + " ";
         }
 
         return answer;

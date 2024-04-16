@@ -23,15 +23,11 @@ public class Question3 {
         for (int rt = k - 1; rt < n; rt++) {
             hm.put(arr[rt], hm.getOrDefault(arr[rt], 0) + 1);
             answer.add(hm.size());
-            // 이해가 안되네, 왜 NPE 가 뜨지?
             hm.put(arr[lt], hm.get(arr[lt]) - 1);
-//            if (hm.containsKey(arr[lt])) {
-//                hm.put(arr[lt], hm.get(arr[lt]) - 1);
-//            }
             if (hm.get(arr[lt]) == 0) {
                 hm.remove(arr[lt]);
-                lt++;
             }
+            lt++;
         }
 
         return answer;

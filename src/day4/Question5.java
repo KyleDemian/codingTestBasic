@@ -14,6 +14,7 @@ public class Question5 {
         // 중복제거 및 정렬까지 자동으로 됌.
         TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder());
 
+        // 들어온 배열값들의 전부 합산 ( 중복을 제거 하기 위해 현재값 +1 )
         for (int i = 0; i < n; i++) {
             for (int j = i+1; j < n; j++) {
                 for (int l = j+1; l < n; l++) {
@@ -23,6 +24,8 @@ public class Question5 {
         }
 
         int cnt = 0;
+
+        // Tset의 경우 자동으로 역순으로 정렬됌, 저렬된 값의 k 값을 추출
         for (int x : Tset) {
             cnt++;
             if (cnt == k) {

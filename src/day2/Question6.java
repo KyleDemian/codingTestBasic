@@ -8,13 +8,22 @@ public class Question6 {
     // https://cote.inflearn.com/contest/10/problem/02-06
 
     // 소수
-    public boolean isPrime(int num) {
-        if (num == 1) return false;
+//    public boolean isPrime(int num) {
+//        if (num == 1) return false;
+//
+//        for (int i = 2; i < num; i++) {
+//            if (num % i == 0) return false;
+//        }
+//
+//        return true;
+//    }
 
-        for (int i = 2; i < num; i++) {
+    // 제곱근 이해의 어떤 수로 나누어 떨어지지 않음
+    public boolean isPrime(int num) {
+        if (num <= 1) return false;
+        for (int i = 2; i * i <= num; i++) {
             if (num % i == 0) return false;
         }
-
         return true;
     }
 
