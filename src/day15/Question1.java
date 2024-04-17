@@ -1,37 +1,44 @@
 package day15;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Question1 {
 
-    // 시뮬레이션 & 구현
-    // 배열의 이동
+    // https://www.acmicpc.net/problem/2738
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
 
-    public char[] solution(int n, int[][] ladder) {
-        char[] answer = new char[n];
-        // A, B, C, D, E 를 셋팅
-        for (int i = 0; i < n; i++) {
-            answer[i] = (char) (i + 'A');
-        }
+        int n = kb.nextInt();
+        int m = kb.nextInt();
 
-        for (int[] line : ladder) { // 배열 방값 1,2,3 값을 가지고 옴
-            for (int x : line) {    // 배열 방안의 값을 확인 ex , {1, 3}
-                // n+1 배열은 0부터 시작이니
-                // 1이라면, 2번과 1번값이 연결됌,
-                // 3이라면 4번과 3번값이 연결됌
-                char tmp = answer[x];
-                answer[x] = answer[x - 1];
-                answer[x - 1] = tmp;
+        int[][] a = new int[n][m];
+        int[][] b = new int[n][m];
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                a[i][j] = kb.nextInt();
             }
         }
-        return answer;
-    }
 
-    public static void main(String[] args) {
-        Question1 T = new Question1();
-        System.out.println(Arrays.toString(T.solution(5, new int[][]{{1, 3}, {2, 4}, {1, 4}})));
-        System.out.println(Arrays.toString(T.solution(7, new int[][]{{1, 3, 5}, {1, 3, 6}, {2, 4}})));
-        System.out.println(Arrays.toString(T.solution(8, new int[][]{{1, 5}, {2, 4, 7}, {1, 5, 7}, {2, 5, 7}})));
-        System.out.println(Arrays.toString(T.solution(12, new int[][]{{1, 5, 8, 10}, {2, 4, 7}, {1, 5, 7, 9, 11}, {2, 5, 7, 10}, {3, 6, 8, 11}})));
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                b[i][j] = kb.nextInt();
+            }
+        }
+
+        int[][] c = new int[n][m];
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(c[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }

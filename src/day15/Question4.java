@@ -1,37 +1,31 @@
 package day15;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Question4 {
-    public int[] solution(int c, int r, int k){
-        int[] answer = new int[2];
-        if(k > c * r) return new int[] {0, 0};
-        int[][] seat = new int[c][r];
-        int[] dx = {-1, 0, 1, 0};
-        int[] dy = {0, 1, 0, -1};
-        int x = 0, y = 0, count = 1, d = 1; // 초기 방향
-        while(count < k){
-            int nx = x + dx[d];
-            int ny = y + dy[d];
-            if(nx < 0 || nx >= c || ny < 0 || ny >=r || seat[nx][ny] > 0){
-                d = (d + 1) % 4;
-                continue;
-            }
-            seat[x][y] = count;
-            count++;
-            x = nx;
-            y = ny;
-        }
-        answer[0] = x + 1;
-        answer[1] = y + 1;
-        return answer;
-    }
 
-    public static void main(String[] args){
-        Question4 T = new Question4();
-        System.out.println(Arrays.toString(T.solution(6, 5, 12)));
-        System.out.println(Arrays.toString(T.solution(6, 5, 20)));
-        System.out.println(Arrays.toString(T.solution(6, 5, 30)));
-        System.out.println(Arrays.toString(T.solution(6, 5, 31)));
+    // https://www.acmicpc.net/problem/10813
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();
+        int m = kb.nextInt();
+        kb.nextLine();
+
+        int[] arr = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            arr[i] = i;
+        }
+
+        for(int i = 0; i < m; i++) {
+            int x = kb.nextInt();
+            int y = kb.nextInt();
+            int temp = arr[x];
+            arr[x] = arr[y];
+            arr[y] = temp;
+        }
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 }
