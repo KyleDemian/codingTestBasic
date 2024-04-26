@@ -20,22 +20,22 @@ public class Question12 {
             arr[i] = sc.nextInt();
         }
 
-        boolean[] visited = new boolean[n];
-        checked("", visited, 0);
+        boolean[] ch = new boolean[n];
+        checked("", ch, 0);
 
         System.out.println(set.size());
     }
 
-    static void checked(String s, boolean[] visited, int depth) {
+    static void checked(String s, boolean[] ch, int depth) {
         if (depth == k) {
             set.add(Integer.parseInt(s));
             return;
         }
         for (int i = 0; i < n; i++) {
-            if (!visited[i]) {
-                visited[i] = true;
-                checked(s + arr[i], visited, depth + 1);
-                visited[i] = false;
+            if (!ch[i]) {
+                ch[i] = true;
+                checked(s + arr[i], ch, depth + 1);
+                ch[i] = false;
             }
         }
     }
