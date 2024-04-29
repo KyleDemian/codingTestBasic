@@ -2,7 +2,7 @@ package day8;
 
 import java.util.Scanner;
 
-public class Question13 {    // 하나도 이해가 안되네 수열은;;
+public class Question13 {
     static int answer = 0, n;
     static int[] dx={-1, -1, 0, 1, 1, 1, 0, -1};
     static int[] dy={0, 1, 1, 1, 0, -1, -1, -1};

@@ -61,6 +61,7 @@ public class Question15 {
 
         q.DFS(0, 0);
         System.out.println(answer);
+        // 삼성 문제 -> DFS 문제 집과 집사이의 피자 배달거리.
         // 4 4
         // 0 1 2 0
         // 1 0 2 1
