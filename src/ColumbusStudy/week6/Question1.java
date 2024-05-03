@@ -26,7 +26,6 @@ public class Question1 {
             grape[b][a] = 1;
         }
 
-        ch[1] = 1;
         DFS(1);
 
         // -1 이유는 자신을 빼야 하기때문에
@@ -34,7 +33,7 @@ public class Question1 {
     }
 
     public static void DFS(int v){
-        // dfs 에서 if else 문으로 구했었는데, 해당 문제는 바이러스에 감연된 컴퓨터만 방문이기때문에
+        // dfs 에서 if else 문으로 구했었는데, 해당 문제는 바이러스에 감염된 컴퓨터만 방문이기때문에
         // 조건문 없이 if( n == v ) 그냥 해당 값을 타는것만 돌리면 됌.
         answer++;
         ch[v] = 1;

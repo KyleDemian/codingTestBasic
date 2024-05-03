@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Question14 {
     // https://www.acmicpc.net/problem/2961
+    // 신맛과 쓴맛의 차이가 가장 작은 요리를 만드는 프로그램을 작성하시오.
 
     private static int n;
     private static int min = Integer.MAX_VALUE;

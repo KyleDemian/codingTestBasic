@@ -33,6 +33,7 @@ public class Question4 {
 
             answer = 0;
 
+            // 해당 부분이 핵심 로직으로 생각 중.
             for(int x = 0; x < n; x++) {
                 for(int y = 0; y < m; y++) {
                     if(grape[x][y] == 1) {

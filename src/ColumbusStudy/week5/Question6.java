@@ -22,6 +22,7 @@ public class Question6 {
             int number = i;
             int res = 0;
 
+            // i 값의 1 의 자리부터 n 의 자리까지 합산한 수 즉 216 -> 1 + 9 + 8 의 값
             while (number > 0) {
                 res += number % 10;
                 number /= 10;

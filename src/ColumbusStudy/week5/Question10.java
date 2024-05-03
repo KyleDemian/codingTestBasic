@@ -8,6 +8,7 @@ public class Question10 {
 
     // https://www.acmicpc.net/problem/17626
     // https://comain.tistory.com/306 참고 사이트
+    // 다시봐도 아래의 코드 부분이 이해는 잘 되지 않음 ( 5월달 3일 기준 )
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

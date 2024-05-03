@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Question12 {
     // https://www.acmicpc.net/problem/5568
+    // 백트래킹
 
     private static HashSet<Integer> set = new HashSet<>();
     private static int n, k;
@@ -12,8 +13,8 @@ public class Question12 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        k = sc.nextInt();
+        n = sc.nextInt();   // n 장이 주어짐
+        k = sc.nextInt();   // 그중 K 장을 선택해서 만들 수 있는 모든 수
         arr = new int[n];
 
         for (int i = 0; i < n; i++) {

@@ -38,6 +38,7 @@ public class Question3 {
             return;
         }
 
+        // 방문했던 요소를 다시 방문하지 않기 위해서 start 값으로 설정.
         for(int i = start; i < k; i++) {
             if (!ch[i]) {
                 ch[i] = true;

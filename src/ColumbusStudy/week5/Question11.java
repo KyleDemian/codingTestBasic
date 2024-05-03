@@ -23,6 +23,7 @@ public class Question11 {
                 sum += b;
                 tired += a;
             } else {
+                // 피로도는 0 이하로 떨어질 수 없기 때문에
                 tired = Math.max(0, tired - c);
             }
         }
