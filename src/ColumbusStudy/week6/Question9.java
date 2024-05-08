@@ -44,7 +44,7 @@ public class Question9 {
             x = cur[1];
             y = cur[2];
 
-            if(x == n && y == m){cnt = L; break;}
+            if(x == n && y == m){cnt = L; return;}
 
             for (int i = 0; i < 4; i++) {
                 int nx = x + dx[i];

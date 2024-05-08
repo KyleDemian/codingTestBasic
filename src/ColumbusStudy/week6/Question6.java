@@ -15,7 +15,7 @@ class Point{
 
 public class Question6 {
     // https://www.acmicpc.net/problem/7576
-    // 해당 문제는 Day8 -> Question12 에서 완전 똑같은 유형 문제가 있었음...
+    // 해당 문제는 Day8 -> Question12 에서 완전 똑같은 유형 문제가 있었음... 토마토
     static int[][] board, dis;
     static int[] dx = {-1, 0, 1, 0};
     static int[] dy = {0, 1, 0, -1};
