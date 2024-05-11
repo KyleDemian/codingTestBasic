@@ -80,15 +80,17 @@ public class Question4 {
 
         return day;
     }
-}
 
-class Tomato {
-    int x, y, z, day;
+    static class Tomato {
+        int x, y, z, day;
 
-    Tomato(int z, int x, int y, int day) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.day = day;
+        Tomato(int z, int x, int y, int day) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.day = day;
+        }
     }
 }
+
+
