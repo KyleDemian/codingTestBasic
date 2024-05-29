@@ -8,7 +8,7 @@ public class Question2 {
 
     static int n, m;
     static boolean[] sight;
-    static ArrayList<Node>[] list;
+    static ArrayList<Edge>[] list;
     static long[] dist;
 
     public static void main(String[] args) throws IOException{
@@ -37,8 +37,8 @@ public class Question2 {
             int s = Integer.parseInt(st.nextToken());
             int e = Integer.parseInt(st.nextToken());
             int c = Integer.parseInt(st.nextToken());
-            list[s].add(new Node(e, c));
-            list[e].add(new Node(s, c));
+            list[s].add(new Edge(e, c));
+            list[e].add(new Edge(s, c));
         }
         //입력 끝
 
@@ -52,38 +52,40 @@ public class Question2 {
     }
 
     public static void dijkstra() {
-        PriorityQueue<Node> q = new PriorityQueue<>();
+        PriorityQueue<Edge> pq = new PriorityQueue<>();
         boolean[] visited = new boolean[n];
-        q.offer(new Node(0, 0));
+        pq.offer(new Edge(0, 0));
 
-        while(!q.isEmpty()) {
-            Node current = q.poll();
+        while(!pq.isEmpty()) {
+            Edge e = pq.poll();
+            int now = e.vet;
+            long nowCost = e.cost;
 
-            if(visited[current.node]) continue;
-            visited[current.node] = true;
+            if(visited[now]) continue;
+            visited[now] = true;
 
-            for(int i = 0; i < list[current.node].size(); i++) {
-                Node next = list[current.node].get(i);
-                if(next.node != n - 1 && sight[next.node]) continue;
-                if(dist[next.node] > dist[current.node] + next.cost) {
-                    dist[next.node] = dist[current.node] + next.cost;
-                    q.offer(new Node(next.node, dist[next.node]));
+            for(int i = 0; i < list[now].size(); i++) {
+                Edge next = list[now].get(i);
+                if(next.vet != n - 1 && sight[next.vet]) continue;
+                if(dist[next.vet] > dist[now] + next.cost) {
+                    dist[next.vet] = dist[now] + next.cost;
+                    pq.offer(new Edge(next.vet, dist[next.vet]));
                 }
             }
         }
     }
 
-    public static class Node implements Comparable<Node> {
-        int node;
+    public static class Edge implements Comparable<Edge> {
+        int vet;
         long cost;
 
-        public Node(int node, long cost) {
-            this.node = node;
+        public Edge(int vet, long cost) {
+            this.vet = vet;
             this.cost = cost;
         }
 
         @Override
-        public int compareTo(Node n) {
+        public int compareTo(Edge n) {
             return (int) (this.cost - n.cost);
         }
     }

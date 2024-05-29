@@ -3,14 +3,14 @@ package ColumbusStudy.week9_다익스트라;
 import java.io.*;
 import java.util.*;
 
-public class Question5 {
+public class Question6 {
 
-    // https://www.acmicpc.net/problem/1927
-    // 최소 힙
+    // https://www.acmicpc.net/problem/11279
+    // 최대 힙
     static int N;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
         N = Integer.parseInt(br.readLine());
         for(int i = 0; i < N; i++) {
             int a = Integer.parseInt(br.readLine());
