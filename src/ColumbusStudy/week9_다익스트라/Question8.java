@@ -19,27 +19,28 @@ public class Question8 {
         System.out.println(result);
     }
 
-    static void DFS(int level) {
-        if(level == N) {
+    static void DFS(int row) {
+        if(row == N) {
             result++;
             return;
         } else {
             // 하나의 행에서 가능한 모든 열에 퀸을 배치해보는것이기떄문에 2중포문을 쓰지않음.
             // 여기서 고려해야할것은 level 의 행을 나타내고있고, i는 열을 나타냄
             // Index x -> level 값이 y 값
+            // 행의 열값 이라고 생각하고 변수도명도 변경.
             for(int i = 0; i < N; i++) {
-                col[level] = i;
-                if (possible(level)) {
-                    DFS(level + 1);
+                col[row] = i;
+                if (possible(row)) {
+                    DFS(row + 1);
                 }
             }
         }
     }
 
-    private static boolean possible(int level) {
-        for(int i = 0; i < level; i++) {
+    private static boolean possible(int row) {
+        for(int i = 0; i < row; i++) {
             // 자기 자신의 값 || 대각선 위치의 값
-            if(col[i] == col[level] || Math.abs(level - i) == Math.abs(col[level] - col[i])) {
+            if(col[i] == col[row] || Math.abs(row - i) == Math.abs(col[row] - col[i])) {
                 return false;
             }
         }
