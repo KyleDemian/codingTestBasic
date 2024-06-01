@@ -26,3 +26,4 @@ N-Queen
 - 틀린 이유
 > 문제 자체를 처음에 이해 자체를 못했었음.
 
+![스크린샷 2024-06-01 오전 10 53 36](https://github.com/KyleDemian/codingTestBasic/assets/11342191/c74e04df-2fa8-4fd4-a805-8009d0636028)
