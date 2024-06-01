@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class Question1 {
-    // https://www.acmicpc.net/problem/1753
+    // https://www.acmicpc.net/problem/1753 (필수)
 
     static ArrayList<ArrayList<Edge>> grape;
     static int V, E;

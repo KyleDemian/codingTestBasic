@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 public class Question11 {
 
-    // https://www.acmicpc.net/problem/16987
+    // https://www.acmicpc.net/problem/16987 (필수)
     static int N;
     static int result = 0;
     static ArrayList<Egg> eggs;

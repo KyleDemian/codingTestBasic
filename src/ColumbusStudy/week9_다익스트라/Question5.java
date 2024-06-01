@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Question5 {
 
-    // https://www.acmicpc.net/problem/1927
+    // https://www.acmicpc.net/problem/1927 (필수)
     // 최소 힙
     static int N;
     public static void main(String[] args) throws IOException {

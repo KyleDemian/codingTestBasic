@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Question3 {
 
-    // https://www.acmicpc.net/problem/1238
+    // https://www.acmicpc.net/problem/1238 (필수)
     static int N, M, X;
     static int[] forwardTime, backwardTime;
     static ArrayList<ArrayList<Edge>> forward, backward;
