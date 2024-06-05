@@ -1,17 +1,17 @@
 package ColumbusStudy.week1_문자열;
 
 import java.math.BigInteger;
-import java.util.Scanner;
+import java.io.*;
 
 public class Question8 {
 
     // https://www.acmicpc.net/problem/1373
-    public static void main(String[] args) {
-        Scanner kb = new Scanner(System.in);
-        String n = kb.next();
-        // 2 진수 값을 10 진수로 -> 10진수를 다시 8진수로 변경
-        BigInteger num = new BigInteger(n.trim(), 2);
-        System.out.println(num.toString(8));
+    // 복습 완
+    // import java.math.BigInteger; << 필수.
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BigInteger num = new BigInteger(br.readLine(), 2);
+        System.out.print(num.toString(8));
 
         // 제곱관련한 부분은 특별한 관계가 생김 2 4 8 16 etc..
         // 1111 -> 17

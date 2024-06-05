@@ -1,42 +1,39 @@
 package ColumbusStudy.week2_스택_큐;
 
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
+import java.io.*;
 
 public class Question2 {
 
     // https://www.acmicpc.net/problem/9012
-    public static void main(String[] args) {
-        Scanner kb = new Scanner(System.in);
-        int n = kb.nextInt();
-        kb.nextLine();
-        String[] arr = new String[n];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = kb.nextLine();
-        }
+    // 복습 완
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        int n = Integer.parseInt(br.readLine());
 
-        for (int i = 0; i < arr.length; i++) {
-            Stack<Character> stack = new Stack<>();
-            boolean isValid = true;
-            for (char x : arr[i].toCharArray()) {
+        while(n-- > 0){
+            Stack<Character> st = new Stack<>();
+            String str = br.readLine();
+            boolean isCorrect = true;
+            for(char x : str.toCharArray()){
                 if(x == '('){
-                    stack.push(x);
+                    st.push(x);
                 } else {
-                    if(stack.isEmpty()){
-                        isValid = false;
+                    if(st.isEmpty()){
+                        isCorrect = false;
                         break;
                     }
-                    stack.pop();
+                    st.pop();
                 }
             }
-
-            if(!stack.isEmpty()) isValid = false;
-
-            if (isValid) {
-                System.out.println("YES");
+            if(!st.isEmpty() || !isCorrect) {
+                sb.append("NO").append("\n");
             } else {
-                System.out.println("NO");
+                sb.append("YES").append("\n");
             }
         }
+
+        System.out.print(sb.toString());
     }
 }

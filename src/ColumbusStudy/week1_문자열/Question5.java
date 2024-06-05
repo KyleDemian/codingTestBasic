@@ -6,9 +6,8 @@ import java.util.regex.Pattern;
 public class Question5 {
 
     // https://www.acmicpc.net/problem/3613
-    // 그럼 사실 소문자도 Error! 나와야하는데 이건 또 그냥 출력해야함... 문제 제대로 이해하고작성한거 맞나?
-    // 입력으로 주어진 변수명이 Java형식이면, C++형식으로 출력하고, C++형식이라면 Java형식으로 출력한다.
-    // 둘 다 아니라면 "Error!"를 출력한다.
+    // 복습 완 -> 그냥 코드만 다시봄 이건...
+
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         String str = kb.next();

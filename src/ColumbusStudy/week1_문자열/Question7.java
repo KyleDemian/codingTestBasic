@@ -5,10 +5,8 @@ import java.util.Scanner;
 public class Question7 {
 
     // https://www.acmicpc.net/problem/1929
-    // 에라토스테네스의 체 방식으로 풀어야함..
-    // 뭔지는 정확하게 아는데, 배열에다가 담아서 그 배열값에서 미래의 될것들을 다 체크해서 다 삭제 ( 배열 Boolean Or 숫자값으로 )
-    // 입력받는값의 이상이면서 이하인값 // m 의 최소값은 그러면 2 이상임
-    // 체 이용해서 풀거나, 제곱근으로 풀거나
+    // 복습 완
+
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int m = kb.nextInt();
