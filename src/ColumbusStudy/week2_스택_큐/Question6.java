@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 
 public class Question6 {
     // https://www.acmicpc.net/problem/1406
+    // 복습 완 왼쪽, 오른쪽이 나온다면 무조건 스택 2개 선언
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();

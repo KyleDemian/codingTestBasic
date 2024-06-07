@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Question7 {
     // https://www.acmicpc.net/problem/1158
+    // 복습 완
     // 요세푸스 문제
     // 둥글게 앉아있다고 생각하고, K 번째마다 빼버리면 됌
     public static void main(String[] args) throws IOException {

@@ -6,6 +6,7 @@ import java.util.Stack;
 public class Question3 {
 
     // https://www.acmicpc.net/problem/1935
+    // 복습 완
     // 후위 표기식
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);

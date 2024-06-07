@@ -9,6 +9,7 @@ import java.util.StringTokenizer;
 
 public class Question6 {
     // https://www.acmicpc.net/problem/16236
+    // 해당 문제 풀이 부분중에 움직일때 같이 움직이는 부분 어떻게해야할지 모르겠음..
 
     static int N;
     static int shark = 2, cnt = 0, eatCount = 0;   // 초기값

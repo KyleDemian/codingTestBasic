@@ -7,6 +7,7 @@ public class Question4 {
     public static void main(String[] args) throws IOException {
 
         // https://www.acmicpc.net/problem/1874
+        // 복습 완
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
