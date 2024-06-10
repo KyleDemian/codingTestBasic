@@ -1,8 +1,9 @@
-package ColumbusStudy.week10_simul;
+package ColumbusStudy.week10_시뮬레이션;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Question5 {
