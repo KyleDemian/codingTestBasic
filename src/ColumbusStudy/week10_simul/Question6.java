@@ -1,4 +1,4 @@
-package ColumbusStudy.week10_시뮬레이션;
+package ColumbusStudy.week10_simul;
 
 import java.io.BufferedReader;
 import java.io.IOException;

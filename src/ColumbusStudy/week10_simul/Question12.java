@@ -1,4 +1,4 @@
-package ColumbusStudy.week10_시뮬레이션;
+package ColumbusStudy.week10_simul;
 
 import java.util.*;
 import java.io.*;
