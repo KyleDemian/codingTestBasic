@@ -72,6 +72,7 @@ public class Question10 {
             map[fb.r][fb.c].remove(fb);
             fb.r = (fb.r + dr[fb.d]*fb.s - 1 + N) % N + 1;
             fb.c = (fb.c + dc[fb.d]*fb.s - 1 + N) % N + 1;
+            if(fb.r > 0 )  fb.r += N +1;
             map[fb.r][fb.c].add(fb);
         }
     }
