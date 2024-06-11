@@ -6,6 +6,7 @@ import java.util.*;
 public class Question1 {
 
     // https://www.acmicpc.net/problem/20006
+    // 복습 완
     static int p, m;
     static ArrayList<Player> list = new ArrayList<>();
     static Queue<Player> q;
@@ -69,6 +70,7 @@ public class Question1 {
         @Override
         public int compareTo(Player ob){
             return name.compareTo(ob.name);
+//            return ob.name.compareTo(name);
         }
     }
 }

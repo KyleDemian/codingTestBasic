@@ -6,6 +6,7 @@ import java.util.*;
 public class Question2 {
 
     // https://www.acmicpc.net/problem/1759
+    // 복습 완
     static int L, C;
     static char[] arr;
     static int[] ch;
@@ -32,6 +33,7 @@ public class Question2 {
 
     static void backTracking(int v, int cnt, int dd){
         if (cnt == L) {
+            // 자음의 개수가 2개 이상이면서,모음이 1개라도 포함된 것,
             if(dd >= 2 && L - dd >= 1){
                 for (int i = 0; i < C; i++) {
                     if(ch[i] == 1) sb.append(arr[i]);

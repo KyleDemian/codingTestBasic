@@ -1,4 +1,4 @@
-package priactice7_bfs;
+package practice7_bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;

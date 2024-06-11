@@ -6,6 +6,7 @@ import java.util.*;
 public class Question3 {
 
     // https://www.acmicpc.net/problem/4485
+    // 복습 완
     static int[] dx = {-1, 0, 1, 0}, dy = {0, 1, 0, -1};
     static int[][] grape, ch;
     static int result, N;
