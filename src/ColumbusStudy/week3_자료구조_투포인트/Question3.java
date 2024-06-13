@@ -6,11 +6,8 @@ import java.util.Scanner;
 
 public class Question3 {
 
-    // 중간고사 문제였음.. 아놔.. 어려웠다. 왜 푼기억이랑 이해가 안되나했는데..
     // https://www.acmicpc.net/problem/1021
-    // https://infodon.tistory.com/89 참고 사이트
-    // https://st-lab.tistory.com/216
-    // https://st-lab.tistory.com/187
+    // 복습 완료
 
     static Deque<Integer> dq = new ArrayDeque<>();
     public static void main(String[] args) {
@@ -34,12 +31,6 @@ public class Question3 {
             int a = kb.nextInt();
             int index = 0;
 
-            // 방향 전환을 위해서 알아야할 최소값
-            // 변환은 성능 저하를 일으킬 수도 있습니다. Integer를 int로 자동 변환하는 과정에서는
-            // 내부적으로 Integer.intValue() 메서드를 호출하게 되며, 이는 추가적인 연산을 필요로 합니다.
-            // 하지만 이런 점은 일반적으로 크리티컬한 성능 이슈를 일으키지는 않습니다.
-            // 따라서 실제로 어떤 타입을 사용할지는 특정 상황과 요구 사항에 따라 판단하시면 됩니다.
-            // 일반적으로 Integer가 필요할 때는 그대로 사용하며, 기본 타입인 int를 사용해야 할 때는 Unboxing을 통해 사용하면 됩니다.
             for (Integer num : dq) {
                 index++;
                 if (num == a) {
@@ -47,8 +38,10 @@ public class Question3 {
                 }
             }
 
-            int dqStart = index - 1;        // 왼쪽
-            int dqEnd = dq.size() - index;  // 오른쪽
+            // 나서 dqStart = index - 1;는 a까지 왼쪽 방향으로의 거리를 나타내고, dqEnd = dq.size() - index;는 a까지 오른쪽 방향으로의 거리를 나타냅니다.
+            //예를 들어, 큐가 1 2 3 4 5 6 7 8 9 10 과 같이 되어 있고, a가 4라면 index는 4가 됩니다. 따라서 dqStart는 3 (왼쪽으로 3칸 움직이면 a에 도달)이 되고, dqEnd는 10 - 4 = 6 (오른쪽으로 6칸 움직이면 a에 도달)이 됩니다.
+            int dqStart = index - 1;        // 왼쪽으로부터
+            int dqEnd = dq.size() - index;  // 오른쪽으로부터
 
             // 덱의 왼쪽 끝에서 a까지의 거리 (index - 1)와 오른쪽 끝에서 a까지의 거리 (dq.size() - index)를 계산합니다.
             // 더 짧은 거리를 선택한 후 요소 a를 큐의 첫 부분으로 이동시키기 위해 해당 방향으로 큐를 회전합니다.
@@ -72,21 +65,6 @@ public class Question3 {
                     }
                 }
             }
-
-//            while(true){
-//                if (a == dq.peekFirst()) {
-//                    dq.pollFirst();
-//                    break;
-//                } else {
-//                    if( index - 1 <= dq.size() - index){   // 좌측
-//                        dq.offerLast(dq.pollFirst());
-//                        answer++;
-//                    } else { // 우측
-//                        dq.offerFirst(dq.pollLast());
-//                        answer++;
-//                    }
-//                }
-//            }
         }
         System.out.print(answer);
     }

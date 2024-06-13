@@ -1,65 +1,45 @@
 package ColumbusStudy.week3_자료구조_투포인트;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class Question9 {
 
     // https://www.acmicpc.net/problem/1940
+    // 복습 완료
     // 정렬 후 투포인트 알고리즘을 사용한 문제
 
-    public static void main(String[] args) {
-        Scanner kb = new Scanner(System.in);
-        int n = kb.nextInt();   // 재료 수
-        int m = kb.nextInt();   // 갑옷을 만드는데 필요한 수
-        kb.nextLine();
-        String[] str = kb.nextLine().split(" ");    // n 재료들이 가진 고유한 번호들
-        int[] numbers = new int[str.length];
-        for (int i = 0; i < n; i++) {
-            numbers[i] = Integer.parseInt(str[i]);
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        int n = Integer.parseInt(br.readLine());
+        int m = Integer.parseInt(br.readLine());
+
+        int[] arr = new int[n];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i = 0; i <n; i++){
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        // 2포인트 알고리즘은 정렬 이후 사용해야 함. ( 기준 )
-        Arrays.sort(numbers);
+        Arrays.sort(arr);
 
-        int result = 0;
-        int lt = 0, rt = numbers.length - 1;
-        // 갑옷은 2개의 재료로 만들고, 두 재료의 고유한 번호를 합쳐서 M 이되면 갑옷 생성
+        int lt = 0;
+        int rt = n - 1;
+        int total = 0;
+
         while(lt < rt){
-            int sum = numbers[lt] + numbers[rt];
-            if (sum == m) {
-                result++;
+            int sum = arr[lt] + arr[rt];
+            if(m == sum){
+                total++;
                 lt++;
                 rt--;
-            } else if (sum < m) {
+            } else if(sum < m){
                 lt++;
-            } else if (sum > m) {
+            } else if(sum > m){
                 rt--;
             }
         }
-        System.out.println(result);
+
+        System.out.print(total);
     }
 }
-
-
-/*
-    public static void main(String[] args) {
-        Scanner kb = new Scanner(System.in);
-        int n = kb.nextInt();   // 재료 수
-        int m = kb.nextInt();   // 갑옷을 만드는데 필요한 수
-        kb.nextLine();
-        String[] str = kb.nextLine().split(" ");    // n 재료들이 가진 고유한 번호들
-        int result = 0;
-        // 갑옷은 2개의 재료로 만들고, 두 재료의 고유한 번호를 합쳐서 M 이되면 갑옷 생성
-        for (int i = 0; i < n; i++) {
-            for (int j = i+1; j < n; j++) {
-                int a = Integer.parseInt(str[i]);
-                int b = Integer.parseInt(str[j]);
-                if ((a + b) == m) {
-                    result++;
-                }
-            }
-        }
-        System.out.println(result);
-    }
-* */

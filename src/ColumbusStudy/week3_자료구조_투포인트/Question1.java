@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Question1 {
 
     // https://www.acmicpc.net/problem/2960
+    // 복습 완
     // 2, 4, 6, 8, 10, 3, 9, 5, 7 순서대로 지워진다. 7번째 지워진 수는 9이다.
     // 모든 숫자를 체크 해야만 함 건너 뛰면 안됌!!
 

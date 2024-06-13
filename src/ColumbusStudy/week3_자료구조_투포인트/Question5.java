@@ -4,43 +4,38 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 public class Question5 {
 
     // https://www.acmicpc.net/problem/1620
-
-    public static void main(String[] args) throws IOException {
+    // 복습 완
+    public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
-        String[] line = br.readLine().split(" ");
-        int n = Integer.parseInt(line[0]);
-        int m = Integer.parseInt(line[1]);
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
 
-        // 포켓몬 도감 - 이름 Key , Value 셋팅
-        HashMap<String, Integer> a = new HashMap<>();
-        HashMap<Integer, String> b = new HashMap<>();
-        for (int i = 0; i < n; i++) {
-            String pokemon = br.readLine();
-            a.put(pokemon, i + 1);
-            b.put(i + 1, pokemon);
+        HashMap<String, Integer> pName = new HashMap<>();
+        HashMap<Integer, String> pNumber = new HashMap<>();
+
+        for(int i = 1; i <= N; i++){
+            String a = br.readLine();
+            pName.put(a, i);
+            pNumber.put(i, a);
         }
 
-        // 찾아야할 것들
-        for (int i = 0; i < m; i++) {
-            String str = br.readLine();
-            if (str.matches("\\d+")) { // 숫자인 경우
-                String result = b.get(Integer.parseInt(str));
-                if(result != null){
-                    sb.append(result).append("\n");
-                }
-            } else { // 문자인 경우
-                Integer result = a.get(str);
-                if(result != null){
-                    sb.append(result).append("\n");
-                }
+        for(int i = 0; i < M ; i++) {
+            String a = br.readLine();
+            if(a.matches("\\d+")) {
+                sb.append(pNumber.get(Integer.parseInt(a))).append("\n");
+            } else {
+                sb.append(pName.get(a)).append("\n");
             }
         }
+
         System.out.print(sb.toString());
     }
 }

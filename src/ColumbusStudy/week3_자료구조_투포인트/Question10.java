@@ -1,70 +1,57 @@
 package ColumbusStudy.week3_자료구조_투포인트;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.time.LocalTime;
-import java.util.HashSet;
+import java.io.*;
+import java.util.*;
 
 public class Question10 {
 
     // https://www.acmicpc.net/problem/19583
+    // 복습 완료
 
-    // HH:MM 형식일 경우
-    public static int getTime(String time) {
-        int h = Integer.parseInt(time.split(":")[0]);
-        int m = Integer.parseInt(time.split(":")[0]);
-
-        return (h * 60) + m;
+    static int getTime(String str){
+        int hour = Integer.parseInt(str.split(":")[0]);
+        int minute = Integer.parseInt(str.split(":")[1]);
+        return (hour * 60) + minute;
     }
 
-    public static void main (String[] args) throws IOException {
+    public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] temp = br.readLine().split(" ");
+        StringBuilder sb = new StringBuilder();
 
-        // 이런방식으로 숫자값을 넣어서 비교해도 됌. 형태가 00:00 ~ 23:59 형태로 들어올경우.
-        int s = getTime(temp[0]);
-        int e = getTime(temp[1]);
-        int c = getTime(temp[2]);
+        // 시간 확인
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int sTime = getTime(st.nextToken());
+        int eTime = getTime(st.nextToken());
+        int smTime = getTime(st.nextToken());
 
-        String[] start = temp[0].split(":");
-        String[] end = temp[1].split(":");
-        String[] closing = temp[2].split(":");
-
-        LocalTime startTime = LocalTime.of(Integer.parseInt(start[0]) , Integer.parseInt(start[1]));
-        LocalTime endTime = LocalTime.of(Integer.parseInt(end[0]) , Integer.parseInt(end[1]));
-        LocalTime closingTime = LocalTime.of(Integer.parseInt(closing[0]) , Integer.parseInt(closing[1]));
-
-        // 채팅 시작전 참석 목록
-        HashSet<String> attendance = new HashSet<>();
-        // 수업종료 후 채팅 목록
-        HashSet<String> validChat = new HashSet<>();
+        // HashMap 의 경우 Key, Value // Set 은 중복 제거 ( 같은 이름을 제거해야함 필수! )
+        HashSet<String> sHm = new HashSet<>();
+        HashSet<String> eHm = new HashSet<>();
 
         String input;
-        while ((input = br.readLine()) != null && !input.equals("")) {
-            String[] arr = input.split(" ");
-            LocalTime chatTime = LocalTime.of(Integer.parseInt(arr[0].split(":")[0]) , Integer.parseInt(arr[0].split(":")[1]));
-            String user = arr[1];
-            // isBefore isAfter 의 경우 현재시간이 포함 안되고, Boolean 값을 반환하지만
-            // LocalDateTime, LocalDate etc 등...
-            // compareTo 를 사용시, 두 날짜의 객체가 시간이 앞서면 음수, 같으면 0, 뒤의날이면 양수를 반환 함.
-            if (chatTime.compareTo(startTime) <= 0) {
-                attendance.add(user);
+        while((input = br.readLine()) != null && !input.equals("")){
+            String[] str = input.split(" ");
+            int userTime = getTime(str[0]);
+            String userName = str[1];
+
+            // 출석 찍은 사람들
+            if(userTime <= sTime){
+                sHm.add(userName);
             }
 
-            if (chatTime.compareTo(endTime) >= 0 && chatTime.compareTo(closingTime) <= 0) {
-                validChat.add(user);
-            }
-        }
-
-        int result = 0;
-        for (String user : attendance) {
-            if (validChat.contains(user)) {
-                result++;
+            // 퇴장 찍은 사람들
+            if(eTime <= userTime  && userTime <= smTime){
+                eHm.add(userName);
             }
         }
 
-        System.out.print(result);
+        int answer = 0;
+        for(String students : sHm){
+            if(eHm.contains(students)){
+                answer++;
+            }
+        }
+        System.out.print(answer);
     }
 }
 

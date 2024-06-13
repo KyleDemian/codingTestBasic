@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 
 public class Question11 {
     // https://www.acmicpc.net/problem/1743
-    // 이전에 풀었던 문제랑 동일한 문제
+    // 복습 완료
 
     static int n, m, k;
     static int[][] grape, ch;

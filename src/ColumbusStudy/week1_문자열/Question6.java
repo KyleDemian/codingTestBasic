@@ -6,6 +6,7 @@ import java.io.*;
 public class Question6 {
 
     // https://www.acmicpc.net/problem/2609
+    // 복습 완 ( 다시한번 더 볼것, 공식임!! )
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st =new StringTokenizer(br.readLine(), " ");

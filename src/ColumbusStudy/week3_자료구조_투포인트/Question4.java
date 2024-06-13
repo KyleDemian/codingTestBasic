@@ -6,6 +6,7 @@ import java.util.Stack;
 public class Question4 {
 
     // https://www.acmicpc.net/problem/10773
+    // 복습 완
 
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);

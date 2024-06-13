@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 public class Question2 {
 
     // https://www.acmicpc.net/problem/2870
+    // 복습 완 // BigInteger , regex.Pattern, regex.Matcher
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();

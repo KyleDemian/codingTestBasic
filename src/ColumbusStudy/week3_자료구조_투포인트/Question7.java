@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Question7 {
 
     // https://www.acmicpc.net/problem/2164
+    // 복습 완
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
@@ -17,20 +18,20 @@ public class Question7 {
         // 쌓인값 넣기
         for (int i = 1; i <= n; i++) {
             dq.offer(i);
-            // dq.offerLast(i);
         }
 
         while(dq.size() > 1){
             // 첫번째 카드 버리기
             dq.pollFirst();
-            // dq.poll();
 
+            // 마지막 카드 넣기
             if (dq.size() > 1) {
-                dq.offer(dq.poll());
-                // dq.offerLast(dq.pollFirst());
+                dq.offerLast(dq.pollFirst());
             }
         }
 
         System.out.println(dq.peekFirst());
     }
 }
+
+
