@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Question7 {
 
     //https://www.acmicpc.net/problem/1541
+    // 복습 하긴 했지만 완벽하지 않음 어려움 이해가
 
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);

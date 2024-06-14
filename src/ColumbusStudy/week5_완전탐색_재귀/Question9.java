@@ -5,14 +5,44 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Set;
+import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
 public class Question9 {
 
     // https://www.acmicpc.net/problem/18511
-    // 다른사람 풀이보니까 다 재귀로 풀고, 속도가 엄청빠르네..
+    // 복습 완
 
-    public static void main(String[] args) throws IOException {
+    static int N, K;
+    static int answer = 0;
+    static int[] arr;
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
+
+        arr =new int[K];
+        st= new StringTokenizer(br.readLine());
+        for(int i = 0; i < K; i++) arr[i] = Integer.parseInt(st.nextToken());
+
+        Arrays.sort(arr);
+
+        DFS(0);
+        System.out.print(answer);
+    }
+
+    static void DFS(int now){
+        if(now > N) return;
+        if(answer < now) answer = now;
+        for(int i = K-1; i >= 0 ; i--){
+            DFS(now*10+arr[i]);
+        }
+    }
+}
+
+/*
+public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] arr = br.readLine().split(" ");
 
@@ -49,4 +79,4 @@ public class Question9 {
         System.out.println(val);
 
     }
-}
+* */

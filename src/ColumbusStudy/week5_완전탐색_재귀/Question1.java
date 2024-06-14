@@ -7,9 +7,11 @@ import java.util.Arrays;
 
 public class Question1 {
 
+    // https://www.acmicpc.net/problem/10870
+    // 복습 완
+
     static long[] dp = new long[25];
 
-    // https://www.acmicpc.net/problem/10870
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

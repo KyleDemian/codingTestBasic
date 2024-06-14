@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Question11 {
 
     // https://www.acmicpc.net/problem/1931
+    // 복습 완료
 
      static class Room implements Comparable<Room>{
          int s, e;
@@ -37,16 +38,6 @@ public class Question11 {
         }
 
         Collections.sort(rooms);
-        // 형식으로 간소화는 가능하지만, 어차피 Room 형태로
-        // ArrayList에 담아야하기때문에, 객체도 생성하고, Comparable 인터페이스를
-        // 구현하는게 실제 코드가 더 깔끔해 보임.
-//        rooms.sort((r1, r2) -> {
-//            if (r1.e == r2.e) {
-//                return r1.s - r2.s;
-//            } else {
-//                return r1.e - r2.e;
-//            }
-//        });
 
         int used = 0;
         int finished = 0;

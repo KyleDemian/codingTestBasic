@@ -7,6 +7,7 @@ import java.util.StringTokenizer;
 
 public class Question13 {
     // https://www.acmicpc.net/problem/14501
+    // 복습 하긴햇는데 완전 탐색은 전체적으로 다시봐야할듯... 어려워
 
     static int n, max = 0;
     static int[] t, p;

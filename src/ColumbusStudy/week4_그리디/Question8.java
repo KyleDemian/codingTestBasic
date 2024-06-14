@@ -1,48 +1,33 @@
 package ColumbusStudy.week4_그리디;
 
-import java.util.Scanner;
+import java.io.*;
 import java.util.Stack;
 
 public class Question8 {
 
     // https://www.acmicpc.net/problem/3986
+    // 복습 완
 
-    public static void main(String[] args) {
-        Scanner kb = new Scanner(System.in);
-        int n = kb.nextInt();
-        kb.nextLine();
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
 
-        int sum = 0;
-        for (int i = 0; i < n; i++) {
-            String str = kb.nextLine();
-            Stack<Character> stack = new Stack<>();
+        int result = 0;
+        while(N-- > 0){
+            Stack<Character> st = new Stack<>();
+            char[] c = br.readLine().toCharArray();
 
-            for (char x : str.toCharArray()) {
-                if (!stack.isEmpty() && stack.peek() == x) {
-                    stack.pop();
+            for(int i = 0; i < c.length; i++){
+                if(!st.isEmpty() && st.peek() == c[i]){
+                    st.pop();
                 } else {
-                    stack.push(x);
+                    st.push(c[i]);
                 }
             }
 
-            if (stack.isEmpty()) {
-                sum++;
-            }
+            if(st.isEmpty()) result++;
         }
 
-        System.out.println(sum);
+        System.out.print(result);
     }
 }
-
-
-/*
-    int count = str.length();
-    for (int j = 0; j < count / 2; j++) {
-        char a = str.charAt(j);
-        char b = str.charAt(count-j-1);
-        String ab = String.valueOf(a) + String.valueOf(b);
-        if(ab.equals("AA") || ab.equals("BB") ){
-            sum++;
-        }
-    }
- * */

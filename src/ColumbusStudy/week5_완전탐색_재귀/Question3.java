@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class Question3 {
 
     // https://www.acmicpc.net/problem/25501
+    // 해당 문제는 이미 답을 주어진 상태에서 나온거라.. 복습의미가 있긴한데.. 공식을 외울껏...
     // 펠린드롬 -> 문자열
 
     static int cnt = 0;

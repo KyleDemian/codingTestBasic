@@ -1,32 +1,34 @@
 package ColumbusStudy.week4_그리디;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.io.*;
+import java.util.*;
 
 public class Question5 {
-    // https://www.acmicpc.net/problem/13305
 
-    public static void main(String[] args) throws IOException {
+    // https://www.acmicpc.net/problem/13305
+    // 복습 완 > 결과값을 무조건 Long 으로 선언해야 제대로 나오네
+
+    public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        // 도시 수 , 도시간 키로수, point -  도시별 용량
+        // 정점의 개수
         int n = Integer.parseInt(br.readLine());
-        String[] kmS = br.readLine().split(" ");
-        String[] pointS = br.readLine().split(" ");
 
-        // 숫자형태의 배열로 변경
-        // 사실... 스트림이 비용이 쌔서 써도 될지는 모르겠음..
-        int[] km = Arrays.stream(kmS).mapToInt(Integer::parseInt).toArray();
-        int[] point = Arrays.stream(pointS).mapToInt(Integer::parseInt).toArray();
+        int[] km = new int[n-1];
+        int[] cost = new int[n];
 
-        long sum = 0 ;
-        long minCost = point[0];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i =0 ; i < km.length; i++) km[i] = Integer.parseInt(st.nextToken());
 
-        for (int i = 0; i < n - 1; i++) {
-            if (point[i] < minCost) {
-                minCost = point[i];
+        st = new StringTokenizer(br.readLine());
+        for(int i =0 ; i < cost.length; i++) cost[i] = Integer.parseInt(st.nextToken());
+
+        long sum = 0;
+        long minCost = cost[0];
+
+        for(int i = 0; i < n - 1 ; i++){
+            if(cost[i] < minCost){
+                minCost = cost[i];
             }
             sum += km[i] * minCost;
         }

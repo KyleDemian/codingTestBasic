@@ -4,7 +4,9 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class Question12 {
+
     // https://www.acmicpc.net/problem/5568
+    // 복습 완
     // 백트래킹
 
     private static HashSet<Integer> set = new HashSet<>();

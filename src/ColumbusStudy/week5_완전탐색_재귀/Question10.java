@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class Question10 {
 
     // https://www.acmicpc.net/problem/17626
+    // 복습 -_- 모르겠음.
     // https://comain.tistory.com/306 참고 사이트
     // 다시봐도 아래의 코드 부분이 이해는 잘 되지 않음 ( 5월달 3일 기준 )
 
