@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 public class Question12 {
 
     // https://www.acmicpc.net/problem/2146
+    // 복습 완
     static int n;
     static int[][] map;
     static int[][] dist;
@@ -59,13 +60,6 @@ public class Question12 {
                         edgeQueue.offer(new int[]{nx, ny});
                     }
                     else if(map[nx][ny] != map[cur[0]][cur[1]]) {
-                        // 다른 섬에 도달했을 경우 그때의 거리를 결과 값으로 사용
-                        // dist[cur[0]][cur[1]]는 현재 위치까지 다리를 만드는 데 필요한 최소 거리를 나타냅니다.
-                        // dist[nx][ny]는 이전 위치에서 현재 위치까지의 거리를 나타냅니다.
-                        // 이 두 거리를 합한 값이 현재 섬에서 다른 섬까지 다리를 만드는 데 필요한 총 거리가 됩니다.
-                        // dist[nx][ny] + dist[cur[0]][cur[1]]는 현재 섬에서 다른 섬까지 다리를 만들 때의 최소 거리를 나타내는 것입니다.
-                        // 그런 후 Math.min(result, dist[nx][ny] + dist[cur[0]][cur[1]])를 통해 이 거리가
-                        // 이전에 구한 최소 거리보다 작은지 확인하고, 만약 더 작다면 최소 거리를 갱신합니다.
                         result = Math.min(result, dist[nx][ny] + dist[cur[0]][cur[1]]);
                     }
                 }

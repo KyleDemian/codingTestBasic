@@ -33,13 +33,6 @@ public class Question5 {
             grape[b][a] = 1;
         }
 
-        // 4 5 1
-        // 1 2
-        // 1 3
-        // 1 4
-        // 2 4
-        // 3 4
-        // 시작 위치가 v 이기때문에
         d(v);
         System.out.println(a1);
         b(v);

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Question3 {
     // https://www.acmicpc.net/problem/6603
+    // 복습 완
 
     static int k;
     static int[] arr, result;

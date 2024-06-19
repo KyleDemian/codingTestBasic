@@ -9,87 +9,61 @@ import java.util.StringTokenizer;
 
 public class Question13 {
     // https://www.acmicpc.net/problem/12851
+    // 복습 완
     // 1697번. 숨바꼭질
     // 13549번. 숨바꼭질 3
     // 13913번. 숨바꼭질 4
-    // 출력이 이해가 안되네..?
-    // 첫째 줄에 n이가 k를 찾는 가장 빠른 시간을 출력한다.
-    // 둘째 줄에는 가장 빠른 시간으로 n이 k을 찾는 방법의 수를 출력한다.
 
-    static int n, k;
-    static int[] dx = {-1, 1, 2}, ch, ways;
+    static int N, M;
+    static int[] ch, ways, dy = {-1, 1, 2};
     static Queue<Integer> q = new LinkedList<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        n = Integer.parseInt(st.nextToken());
-        k = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
 
-        ch = new int[100001];
         ways = new int[100001];
+        ch = new int[100001];
 
-        ways[n] = 1;
-        ch[n] = 1;
+        // 현위치 시작 위치
+        ch[N] = 1;
+        ways[N] = 1;
 
-        int time = BFS(n, k);
-
-        System.out.println(time);
-        System.out.println(ways[k]);
+        // 가장 빠른 시간 출력
+        System.out.println(BFS(N, M));
+        System.out.println(ways[M]);
     }
 
     static int BFS(int start, int end) {
         q.offer(start);
         int answer = 0;
-
         while (!q.isEmpty()) {
             int size = q.size();
             for (int i = 0; i < size; i++) {
-                int tmp = q.poll();
+                int location = q.poll();
 
-                if (tmp == end) // ways[k]가 처음으로 0이 아닌 값을 가질 때의 answer
-                    return ch[end] - 1;
+                // 시작값이 1이기때문에 -1을 해주어야 함
+                if (location == end) return ch[end] - 1;
 
-                for(int j = 0; j < dx.length; j++) {
-                    int nx = dx[j] == 2 ? tmp * 2 : tmp + dx[j];
-                    if(nx >= 0 && nx <= 100000) {
-                        if(ch[nx] == 0) {
-                            ch[nx] = ch[tmp] + 1;
-                            ways[nx] = ways[tmp];
-                            q.offer(nx);
-                        }
-                        else if (ch[tmp] + 1 == ch[nx]) {
-                            ways[nx] += ways[tmp];
+                for (int k = 0; k < 3; k++) {
+                    int ny = (dy[k] == 2) ? location * 2 : location + dy[k];
+                    if (ny >= 0 && ny <= 100000) {
+                        // 해당 위치에 첫방문, 시작이 5 였으면 4, 6 , 10
+                        if (ch[ny] == 0) {
+                            ch[ny] = ch[location] + 1;
+                            ways[ny] = ways[location];
+                            q.offer(ny);
+                        } else if (ch[location] + 1 == ch[ny]) {
+                            ways[ny] += ways[location];
                         }
                     }
                 }
             }
         }
+
         return answer;
     }
 }
-
-
-/* 최단경로
-    static void BFS(int start, int end) {
-        ch[start] = 1;
-        q.offer(start);
-
-        while (!q.isEmpty()) {
-            int length = q.size();
-            for (int i = 0; i < length; i++) {
-                int tmp = q.poll();
-                for(int j = 0; j < dx.length; j++) {
-                    int nx = dx[j] == 2 ? tmp * 2 : tmp + dx[j];
-                    if(nx == end){ answer++; return;}
-                    if (nx >= 0 && nx <= 100000 && ch[nx] == 0) {
-                        ch[nx] = 1;
-                        q.offer(nx);
-                    }
-                }
-            }
-            answer++;
-        }
-    }
-*/

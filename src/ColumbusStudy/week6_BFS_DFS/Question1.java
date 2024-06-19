@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Question1 {
     // https://www.acmicpc.net/problem/2606
+    // 복습 완 - 양방향 그래프
 
     static int n, m , answer = 0;
     static int[] ch;
@@ -33,8 +34,6 @@ public class Question1 {
     }
 
     public static void DFS(int v){
-        // dfs 에서 if else 문으로 구했었는데, 해당 문제는 바이러스에 감염된 컴퓨터만 방문이기때문에
-        // 조건문 없이 if( n == v ) 그냥 해당 값을 타는것만 돌리면 됌.
         answer++;
         ch[v] = 1;
         for (int i = 1; i <= n; i++) {

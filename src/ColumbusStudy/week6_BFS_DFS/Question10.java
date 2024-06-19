@@ -5,6 +5,7 @@ import java.io.*;
 
 public class Question10 {
     // https://www.acmicpc.net/problem/2667
+    // 복습 완료
 
     static int n;
     static ArrayList<Integer> list;

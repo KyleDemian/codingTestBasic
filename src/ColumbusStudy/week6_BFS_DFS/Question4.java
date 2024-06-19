@@ -5,12 +5,12 @@ import java.util.*;
 
 public class Question4 {
     // https://www.acmicpc.net/problem/1012
-    // 확실히 어제 들었던 강의덕인디 이해가 쉬웠다.
+    // 복습 완
+    // 이거 행열 위치가 열행 위치로 들어오는데.. 왜 그 순서대로 바꿔서 하면 안되는지 이유를 모르겠음.
 
     static int t, m, n, k, answer;
     static int[][] grape;
     static int[] dx = {-1, 0, 1, 0}, dy = {0, 1, 0, -1};
-
 
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,8 +19,8 @@ public class Question4 {
         // t 만큼 반복
         for (int i = 0; i < t; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            n = Integer.parseInt(st.nextToken());   // 행
-            m = Integer.parseInt(st.nextToken());   // 열
+            n = Integer.parseInt(st.nextToken());   // 열
+            m = Integer.parseInt(st.nextToken());   // 행
             k = Integer.parseInt(st.nextToken());   // 배추의 위치
 
             grape = new int[n][m];
