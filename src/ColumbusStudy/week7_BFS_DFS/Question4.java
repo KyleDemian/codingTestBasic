@@ -11,67 +11,57 @@ public class Question4 {
 
     // https://www.acmicpc.net/problem/7569
 
-    static int M, N, H;
-    static int[][][] arr;
-    static Queue<Tomato> q;
+    static int N, M, H;
+    static int[][][] grape;
+    static Queue<Tomato> q = new LinkedList<>();
+    static int[] dx = {-1, 0, 1, 0, 0, 0}, dy = {0, 1, 0, -1, 0 ,0} , dz = {0, 0, 0, 0, 1, -1};
 
-    static int[] dx = {-1, 0, 1, 0, 0, 0};
-    static int[] dy = {0, 1, 0, -1, 0, 0};
-    static int[] dz = {0, 0, 0, 0, 1, -1};
-
-
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
+        M = Integer.parseInt(st.nextToken()); // 열
+        N = Integer.parseInt(st.nextToken()); // 행
+        H = Integer.parseInt(st.nextToken()); // 상자의 개수
 
-        M = Integer.parseInt(st.nextToken());
-        N = Integer.parseInt(st.nextToken());
-        H = Integer.parseInt(st.nextToken());
+        grape = new int[H][N][M];
 
-        arr = new int[H][N][M];
-        q = new LinkedList<>();
-
-        for (int h = 0; h < H; h++) {
-            for (int n = 0; n < N; n++) {
+        for(int z = 0; z < H; z++){
+            for(int i = 0; i < N; i++){
                 st = new StringTokenizer(br.readLine());
-                for (int m = 0; m < M; m++) {
-                    arr[h][n][m] = Integer.parseInt(st.nextToken());
-
-                    if (arr[h][n][m] == 1) {
-                        q.offer(new Tomato(h, n, m, 0));
-                    }
+                for(int j = 0; j < M; j++){
+                    grape[z][i][j] = Integer.parseInt(st.nextToken());
+                    if(grape[z][i][j] == 1) q.offer(new Tomato(z, i, j, 0));
                 }
             }
         }
 
-        System.out.println(BFS());
+        System.out.print(BFS(0));
     }
 
-    static int BFS() {
-        int day = 0;
-
-        while(!q.isEmpty()) {
+    static int BFS(int day){
+        while(!q.isEmpty()){
             Tomato t = q.poll();
+            int x = t.x, y = t.y, z = t.z;
             day = t.day;
 
-            for (int i = 0; i < 6; i++) {
-                int nx = t.x + dx[i];
-                int ny = t.y + dy[i];
-                int nz = t.z + dz[i];
+            for(int k = 0; k < 6; k++){
+                int nx = x + dx[k];
+                int ny = y + dy[k];
+                int nz = z + dz[k];
 
                 if(nx >= 0 && nx < N && ny >= 0 && ny < M && nz >= 0 && nz < H) {
-                    if(arr[nz][nx][ny] == 0) {
-                        arr[nz][nx][ny] = 1;
-                        q.offer(new Tomato(nz, nx, ny, day + 1));
+                    if(grape[nz][nx][ny] == 0) {
+                        grape[nz][nx][ny] = 1;
+                        q.offer(new Tomato(nz, nx, ny, day+1));
                     }
                 }
             }
         }
 
-        for (int h = 0; h < H; h++) {
-            for (int n = 0; n < N; n++) {
-                for (int m = 0; m < M; m++) {
-                    if (arr[h][n][m] == 0) return -1;
+        for(int z = 0; z < H; z++){
+            for(int i = 0; i < N; i++){
+                for(int j = 0; j < M; j++){
+                    if(grape[z][i][j] == 0) return -1;
                 }
             }
         }

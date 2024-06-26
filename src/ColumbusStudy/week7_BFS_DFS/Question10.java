@@ -9,7 +9,8 @@ import java.util.Queue;
 public class Question10 {
 
     // https://www.acmicpc.net/problem/16954
-
+    // 복습 완
+    
     static int n = 8, result = 0;
     static String[][] grape;
     static int[] dx = {-1, -1, 0, 1, 1, 1, 0, -1, 0};
@@ -25,12 +26,12 @@ public class Question10 {
             }
         }
 
-        BFS(grape);
+        BFS();
 
         System.out.println(result);
     }
 
-    static void BFS(String[][] grape) {
+    static void BFS() {
         boolean[][][] visited = new boolean[n][n][n*n];
         Queue<int[]> q = new LinkedList<>();
         q.offer(new int[]{7, 0, 0}); // 처음 위치 설정
@@ -52,15 +53,18 @@ public class Question10 {
                 int ny = y + dy[i];
 
                 if(nx >= 0 && ny >= 0 && nx < n && ny < n){
-                    if(nx-t >= 0 && "#".equals(grape[nx-t][ny])) continue; // 이동하려는 칸에 벽이 내려와 있는지 체크
+                    // 현재 시간에 이동하려는 칸에 벽이 있는지 확인하는 과정.
+                    // 현재 행
+                    if (nx - t >= 0 && "#".equals(grape[nx - t][ny])) continue;
 
-                    //벽이 내려와 있는지 체크
-                    if(nx-t-1 >= 0 && "#".equals(grape[nx-t-1][ny])) continue;
+                    // 다음 시간에 이동하려는 칸에 벽이 내려와 있을 것인지를 확인하는 조건
+                    // 다음 행
+                    if (nx - t - 1 >= 0 && "#".equals(grape[nx - t - 1][ny])) continue;
 
                     //벽에 안전한지 체크
-                    if(!visited[nx][ny][t+1]){
-                        visited[nx][ny][t+1] = true;
-                        q.offer(new int[]{nx, ny, t+1});
+                    if (!visited[nx][ny][t + 1]) {
+                        visited[nx][ny][t + 1] = true;
+                        q.offer(new int[]{nx, ny, t + 1});
                     }
                 }
             }

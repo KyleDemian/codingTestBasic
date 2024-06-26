@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 public class Question8 {
 
     // https://www.acmicpc.net/problem/2206
-
+    // 복습 완료
     static int n, m;
     static int[][] grape;
     static int[][][] ch;
@@ -34,22 +34,22 @@ public class Question8 {
             }
         }
 
-        System.out.println(BFS(1, 1));
+        System.out.println(BFS());
     }
 
-    static int BFS(int start, int end){
+    static int BFS(){
         q = new LinkedList<>();
-        q.offer(new int[]{start, end, 1, 0}); // depth = 1, cnt = 0부터 시작
-        ch[start][end][0] = 1; // 시작 지점의 최소 단계 수 저장 (cnt=0)
+        q.offer(new int[]{1, 1, 1, 0}); // depth = 1, cnt = 0부터 시작
+        ch[1][1][0] = 1; // 시작 지점의 최소 단계 수 저장 (cnt=0)
 
         while (!q.isEmpty()) {
             int[] cur = q.poll();
             int x = cur[0];
             int y = cur[1];
-            int depth = cur[2];
-            int cnt = cur[3];
+            int count = cur[2];
+            int wall = cur[3];
 
-            if(x == n && y == m){ return depth;}
+            if(x == n && y == m){ return count;}
 
             for (int i = 0; i < 4; i++) {
                 int nx = x + dx[i];
@@ -57,14 +57,14 @@ public class Question8 {
 
                 if (nx > 0 && nx <= n && ny > 0 && ny <= m) {
                     // 1회 사용
-                    if (grape[nx][ny] == 1 && cnt == 0) {
+                    if (grape[nx][ny] == 1 && wall == 0) {
                         // 벽이 있는 위치고, 벽을 아직 부수지 않았다면
-                        q.offer(new int[]{nx, ny, depth + 1, cnt + 1});
-                        ch[nx][ny][cnt + 1] = ch[x][y][cnt] + 1;
-                    } else if (grape[nx][ny] == 0 && ch[nx][ny][cnt] == 0) {
+                        q.offer(new int[]{nx, ny, count + 1, wall + 1});
+                        ch[nx][ny][wall + 1] = ch[x][y][wall] + 1;
+                    } else if (grape[nx][ny] == 0 && ch[nx][ny][wall] == 0) {
                         // 벽이 없는 위치로 이동하고 아직 방문하지 않았다면
-                        q.offer(new int[]{nx, ny, depth + 1, cnt});
-                        ch[nx][ny][cnt] = ch[x][y][cnt] + 1;
+                        q.offer(new int[]{nx, ny, count + 1, wall});
+                        ch[nx][ny][wall] = ch[x][y][wall] + 1;
                     }
                 }
             }
