@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class Question5 {
 
     // https://www.acmicpc.net/problem/9655
+    // 복습 완료
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());    // 1000 개까지,

@@ -45,26 +45,37 @@ public class Question12 {
         }
 
         // 각 섬의 가장자리에서부터 다른 섬까지의 거리 측정 시작
-        int result = Integer.MAX_VALUE;
+//        int result = Integer.MIN_VALUE;   // 가장 큰 값을 구할때
+        int result = Integer.MAX_VALUE;     // 가장 거리가 짧은 값을 구할때
         // 가장자리 모든 값이 저장되어서 해당 큐를 돌리면 됌,
         while(!edgeQueue.isEmpty()) {
             int[] cur = edgeQueue.poll();
+            int x = cur[0];
+            int y = cur[1];
             for(int i = 0; i < 4; i++) {
-                int nx = cur[0] + dx[i];
-                int ny = cur[1] + dy[i];
+                int nx = x + dx[i];
+                int ny = y + dy[i];
 
                 if(nx >= 0 && ny >= 0 && nx < n && ny < n) {
                     if(map[nx][ny] == 0) {
-                        map[nx][ny] = map[cur[0]][cur[1]];
-                        dist[nx][ny] = dist[cur[0]][cur[1]] + 1;
+                        map[nx][ny] = map[x][y];
+                        dist[nx][ny] = dist[x][y] + 1;
                         edgeQueue.offer(new int[]{nx, ny});
                     }
-                    else if(map[nx][ny] != map[cur[0]][cur[1]]) {
-                        result = Math.min(result, dist[nx][ny] + dist[cur[0]][cur[1]]);
+                    else if(map[nx][ny] != map[x][y]) {
+                        result = Math.min(result, dist[nx][ny] + dist[x][y]);
                     }
                 }
             }
         }
+
+        // 가장 큰 값
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                result = Math.max(result, dist[i][j]);
+            }
+        }
+
         System.out.println(result);
     }
 
@@ -86,8 +97,7 @@ public class Question12 {
                         queue.offer(new int[]{nx, ny});
                         check[nx][ny] = true;
                         map[nx][ny] = cnt;
-                    }
-                    else if(map[nx][ny] == 0 && !check[nx][ny]) {
+                    } else if(map[nx][ny] == 0 && !check[nx][ny]) {
                         // 섬의 가장자리를 찾은 경우 edge 큐에 저장
                         edgeQueue.offer(new int[]{cur[0], cur[1]});
                     }

@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class Question9 {
 
     // https://www.acmicpc.net/problem/11726
+    // 복습 완료
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

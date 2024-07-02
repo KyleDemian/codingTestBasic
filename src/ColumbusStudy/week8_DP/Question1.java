@@ -7,20 +7,22 @@ import java.io.InputStreamReader;
 public class Question1{
 
     // https://www.acmicpc.net/problem/2748
+    // 복습 완
     static long[] dp = new long[91];
-    public static void main(String[] args) throws IOException {
+    static int N;
+    public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = Integer.parseInt(br.readLine());
+        N = Integer.parseInt(br.readLine());
+
         dp[0] = 0;
-        dp[1] = 1;      // 틀린 이유 초기 설정값 0, 1, 1 순으로
-        System.out.println(fibo(n));
+
+        System.out.print(fibo(N));
     }
 
-    static long fibo(int n) {
-        if (n <= 1) return dp[n];
+    static long fibo(int n){
+        if(n == 1 || n == 2) return dp[n] = 1;
         if(dp[n] != 0) return dp[n];
-        dp[n] = fibo(n-1) + fibo(n-2);
-        return dp[n];
+        return dp[n] = fibo(n-2) + fibo(n-1);
     }
 }

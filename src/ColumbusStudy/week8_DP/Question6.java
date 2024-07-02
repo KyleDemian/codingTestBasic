@@ -26,19 +26,4 @@ public class Question6 {
         }
         System.out.println(dp[n]);
     }
-
-    static int recursive(int n){
-        if(dp[n] == 0){
-            if (n % 6 == 0) {
-                dp[n] = Math.min(recursive(n -1), Math.min(recursive(n / 3) , recursive(n / 2)) + 1);
-            } else if( n % 3 == 0) {
-                dp[n] = Math.min(recursive(n -1 ), recursive(n / 3) + 1);
-            } else if( n % 2 == 0) {
-                dp[n] = Math.min(recursive(n -1 ), recursive(n / 2) + 1);
-            } else {
-                dp[n] = recursive(n -1) + 1;
-            }
-        }
-        return dp[n];
-    }
 }

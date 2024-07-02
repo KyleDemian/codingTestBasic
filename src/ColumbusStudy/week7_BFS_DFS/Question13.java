@@ -13,7 +13,8 @@ public class Question13 {
 
     static int n, l;
     static int[][] ch;
-    static int[] dx = {-2, -1, 1, 2, 2, 1, -1, -2}, dy = {1, 2, 2, 1, -1, -2, -2, -1};
+    static int[] dx = {-2, -1, 1, 2, 2, 1, -1, -2}
+               , dy = {1, 2, 2, 1, -1, -2, -2, -1};
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,15 +24,16 @@ public class Question13 {
             // 한 변의 길이
             l = Integer.parseInt(br.readLine());
 
-            int[][] grape = new int[l][l];
             ch = new int[l][l];
             // 시작 위치
             StringTokenizer st = new StringTokenizer(br.readLine());
-            int startX = Integer.parseInt(st.nextToken()), startY = Integer.parseInt(st.nextToken());
+            int startX = Integer.parseInt(st.nextToken()),
+                startY = Integer.parseInt(st.nextToken());
 
             // 도착 지점
             st = new StringTokenizer(br.readLine());
-            int destinyX = Integer.parseInt(st.nextToken()), destinyY = Integer.parseInt(st.nextToken());
+            int destinyX = Integer.parseInt(st.nextToken()),
+                destinyY = Integer.parseInt(st.nextToken());
 
             sb.append(BFS(startX, startY, destinyX, destinyY)).append("\n");
         }

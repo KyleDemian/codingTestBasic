@@ -9,9 +9,6 @@ public class Question10 {
 
     // https://www.acmicpc.net/problem/9465
     public static void main(String[] args) throws IOException {
-        // 문제의 접근 흑백 논치럼 한 열의 값중 큰 값을 선택하면 해당 다른 값은 선택 못함,
-        // 그리고나서 그 다음 열의 값을 체크하구 그 합한 값이, 그 이전값보다 크다면 다시 순서변경하면서 총 n번만 돌면 끝
-        
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine());
         while (T-- > 0) {

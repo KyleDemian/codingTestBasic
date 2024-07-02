@@ -5,13 +5,14 @@ import java.util.Scanner;
 public class Question3 {
 
     // https://www.acmicpc.net/problem/9095
+    // 복습 완료
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
 
         int[] dp = new int[12];
-        dp[1] = 1;
-        dp[2] = 2;
+        dp[1] = 1;  // 1 일경우 1,2,3 으로 만들수 잇는 숫자는 1개,
+        dp[2] = 2;  // 2 일경우 만들 수 있는 숫자가 2개
         dp[3] = 4;
         dp[4] = 7;  // 즉 3 + 2 + 1 = > 7 이 나옴. 그 다음케이스도 동일하게 넘어갈거임..
 
